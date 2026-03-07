@@ -1,0 +1,1657 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE Damietta Student Branch</title>
+    <link rel="stylesheet" href="indexx.css">
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+
+
+
+
+
+
+
+        /* Intro Animation Styles */
+.intro-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #0056b3, #00a8e8);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+/* Typing Effect Styles */
+.typing-cursor::after {
+    content: '|';
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.hero-content h1,
+.hero-content p,
+.about-content h2,
+.about-content p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.5s ease;
+}
+
+.hero-content h1.active,
+.hero-content p.active,
+.about-content h2.active,
+.about-content p.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+
+
+
+
+
+
+
+
+
+.intro-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.intro-content {
+    text-align: center;
+    color: white;
+    animation: fadeIn 1s ease;
+}
+
+.intro-image {
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 30px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    animation: zoomIn 1s ease;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.intro-text h1 {
+    font-size: 36px;
+    margin-bottom: 30px;
+    min-height: 50px;
+}
+
+.intro-btn button {
+    background: white;
+    color: #0056b3;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.intro-btn button:hover {
+    background: #f0f0f0;
+    transform: scale(1.05);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+    from { transform: scale(0); }
+    to { transform: scale(1); }
+}
+
+
+
+
+
+        /* ==================== CSS جديد للصفحات المضافة ==================== */
+        
+        /* صفحة المدونة */
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .blog-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .blog-image {
+            height: 200px;
+            background: linear-gradient(135deg, #0056b3, #00a8e8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 50px;
+        }
+        
+        .blog-content {
+            padding: 20px;
+        }
+        
+        .blog-date {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .blog-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .blog-excerpt {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .btn-read-more {
+            background: #0056b3;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .btn-read-more:hover {
+            background: #004494;
+        }
+        
+        /* صفحة اللجان */
+        .committees-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .committee-card {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .committee-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .committee-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #0056b3, #00a8e8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: white;
+            font-size: 35px;
+        }
+        
+        .committee-title {
+            font-size: 22px;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .committee-desc {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* صفحة الفروع */
+        .chapters-container {
+            margin-top: 30px;
+        }
+        
+        .chapter-item {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .chapter-item:hover {
+            transform: translateX(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .chapter-logo {
+            width: 80px;
+            height: 80px;
+            background: #f0f0f0;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            color: #0056b3;
+        }
+        
+        .chapter-info h3 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        .chapter-info p {
+            color: #666;
+            margin: 0;
+        }
+        
+        /* صفحة الأسئلة الشائعة */
+        .faq-container {
+            max-width: 800px;
+            margin: 30px auto;
+        }
+        
+        .faq-item {
+            background: white;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            color: #333;
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: #f5f5f5;
+        }
+        
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+        
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 0 20px 20px;
+            max-height: 500px;
+        }
+        
+        /* ==================== تنسيقات عامة ==================== */
+        .page-hero {
+            background: linear-gradient(135deg, #0056b3, #00a8e8);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .page-hero h1 {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .page-hero p {
+            font-size: 20px;
+            opacity: 0.9;
+        }
+        
+        .section {
+            padding: 60px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* ==================== تحسينات الهيدر ==================== */
+        header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            flex-direction: row-reverse;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            direction: ltr;
+        }
+        
+        .logo img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        
+        .logo span {
+            font-size: 24px;
+            font-weight: bold;
+            color: #0056b3;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+            align-items: center;
+            direction: ltr;
+        }
+        
+        /* .nav-link {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s;
+        } */
+
+
+        .nav-link {
+    text-decoration: none;
+    color: #333; /* لون النص أسود واضح */
+    font-weight: 500;
+    transition: color 0.3s;
+    cursor: pointer;
+    display: inline-block; /* عشان الزر يثبت شكله */
+    padding: 5px 10px; /* مسافة داخلية عشان الكلمة تطلع جنب بعض */
+}
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: #0056b3;
+        }
+        
+        /* .btn-join {
+            background: #0056b3;
+            color: white !important;
+            cursor: pointer;
+            padding: 10px 25px;
+            border-radius: 25px;
+        } */
+        
+        .btn-join {
+    background: #0056b3;
+    color: #ffffff !important; /* لون النص أبيض واضح */
+    padding: 10px 25px; /* مسافة داخلية عشان الكلمة تطلع جنب بعض */
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold; /* عشان الخط يكون واضح */
+    text-decoration: none; /* عشان ما يطلعش خط تحت الكلمة */
+    display: inline-block; /* عشان الزر يثبت شكله */
+}
+
+
+
+
+
+
+        .btn-join:hover {
+            background: #004494;
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        /* ==================== تحسينات الأقسام ==================== */
+        .page-section {
+            display: none;
+        }
+        
+        .page-section.active {
+            display: block;
+        }
+        
+        .btn-primary {
+            background: #0056b3;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .btn-primary:hover {
+            background: #004494;
+        }
+        
+        .btn-event {
+            background: #00a8e8;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .btn-event:hover {
+            background: #0088cc;
+        }
+        
+        /* ==================== تحسينات الفوتر ==================== */
+        /* footer {
+            background: #333;
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 24px;
+            transition: color 0.3s;
+        }
+        
+        .social-links a:hover {
+            color: #00a8e8;
+        } */
+        
+        /* ==================== تحسينات التجاوب ==================== */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            .page-hero h1 {
+                font-size: 32px;
+            }
+            
+            .blog-grid,
+            .committees-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+
+            /* ==================== تحسينات الفوتر ==================== */
+  /* ==================== تحسينات الفوتر ==================== */
+footer {
+    background: #333;
+    color: white;
+    padding: 40px 0 20px;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 0 20px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Location على الشمال (اليسار) */
+.footer-location {
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+    order: 3; /* يخليه على الشمال */
+}
+
+/* Social Links في الوسط */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px 0;
+    order: 2; /* يخليه في الوسط */
+}
+
+/* Contact Us على اليمين (اليمين) */
+.footer-contact {
+    flex: 1;
+    min-width: 200px;
+    text-align: right;
+    order: 2; /* يخليه على اليمين */
+}
+
+.footer-location h3,
+.footer-contact h3 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #00a8e8;
+}
+
+.footer-location p,
+.footer-contact p {
+    font-size: 14px;
+    margin: 5px 0;
+    color: #ccc;
+}
+
+.social-links a {
+    color: white;
+    font-size: 24px;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.social-links a:hover {
+    color: #00a8e8;
+}
+
+.footer-bottom {
+    border-top: 1px solid #555;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #999;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .footer-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .footer-location,
+    .footer-contact {
+        text-align: center;
+        order: 1;
+    }
+    
+    .social-links {
+        order: 0;
+    }
+}
+
+
+
+
+
+
+        }
+    </style>
+</head>
+<body>
+
+
+
+
+    <!-- Intro Animation Section -->
+<div class="intro-overlay" id="introOverlay">
+    <div class="intro-content">
+        <div class="intro-image">
+            <img src="photo_2026-03-03_02-08-08.jpg" alt="IEEE Logo">
+        </div>
+        <div class="intro-text">
+            <h1 id="typing-text"></h1>
+        </div>
+        <div class="intro-btn">
+            <!-- <button onclick="closeIntro()">ابدأ التصفح</button> -->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+    <!-- الهيدر -->
+    <header>
+
+
+
+        <div class="container">
+            <div class="logo">
+                <img src="photo_2026-03-03_02-08-08.jpg" alt="IEEE">
+                <span>IEEE Damietta</span>
+            </div> 
+            <nav>
+                <ul id="nav-menu">
+                    <li><a class="nav-link active" data-page="home">Home</a></li>
+                    <li><a class="nav-link" data-page="about">About us </a></li>
+                    <li><a class="nav-link" data-page="events">Events</a></li>
+                    <li><a class="nav-link" data-page="team">Membership</a></li>
+                    <li><a class="nav-link" data-page="blogs">Blogs</a></li>
+                    <li><a class="nav-link" data-page="committees">Committees</a></li>
+                    <li><a class="nav-link" data-page="chapters">Branches</a></li>
+                    <li><a class="nav-link" data-page="faq"> FAQ</a></li>
+                    <li><a class="nav-link btn-join" data-page="join">Join now</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+    <!-- الصفحة الرئيسية
+    <section id="home" class="page-section active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>  Welcome to IEEE Damietta Branch </h1>
+                <p>We offer the best educational and technical opportunities for engineering students.
+                </p>
+                <button class="btn-primary" onclick="showPage('join')">Join Now </button>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <div class="about-content">
+                    <h2> About us</h2>
+                    <p>The IEEE student branch at Damietta University is a student organization that aims to develop the technical and leadership skills of engineering students. </p>
+                    <button class="btn-primary" onclick="showPage('about')">Learn more </button>
+                </div>
+            </div>
+        </section> -->
+
+<!-- الصفحة الرئيسية -->
+<section id="home" class="page-section active">
+    <section class="hero">
+        <div class="hero-content">
+            <h1 id="home-title">Welcome to IEEE Damietta Branch</h1>
+            <p id="home-description">We offer the best educational and technical opportunities for engineering students.</p>
+            <button class="btn-primary" onclick="showPage('join')">Join Now</button>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <h2 id="about-title">About us</h2>
+                <p id="about-text">The IEEE student branch at Damietta University is a student organization that aims to develop the technical and leadership skills of engineering students.</p>
+                <button class="btn-primary" onclick="showPage('about')">Learn more</button>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+        <section class="section" style="background: #f5f5f5;">
+            <div class="container">
+                <h2>Upcoming events </h2>
+                <div class="events-grid">
+                    <div class="event-card">
+                        <span class="date">2026</span>
+                        <h3>  Python</h3>
+                        <p>تعلم البرمجة بلغة بايثون من الصفر</p>
+                        <button class="btn-event" onclick="showPage('events')">Details</button>
+                    </div>
+                    <div class="event-card">
+                        <span class="date">2026</span>
+                        <h3> ورشه الاردوينو </h3>
+                        <p>شارك في ورش الاردوينو </p>
+                        <button class="btn-event" onclick="showPage('events')">Details</button>
+                    </div>
+                    <!-- <div class="event-card">
+                        <div class="event-card">
+                            <span class="date"></span>
+                            <h3></h3>
+                            <p>  </p>
+                            <button class="btn-event" onclick="showPage('events')"></button> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    
+        <!-- صفحة من نحن -->
+        <section id="about" class="page-section">
+            <section class="page-hero">
+                <h1>About us </h1>
+                <p>Learn more about IEEE at Damietta University</p>
+            </section>
+            
+            <section class="section">
+                <div class="container">
+                    <div class="about-content">
+                        <h2>since 2022</h2>
+                        <p>The IEEE student branch at Damietta University was established with the aim of spreading technical awareness. </p>
+                        <ul class="about-list">
+                            <li>✅ Technical workshops </li>
+                            <li>✅ Arduino workshop</li>
+                            <li>✅ Training opportunities in major companies</li>
+                            <li>✅ Internationally accredited certificates</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-box"><i class="fas fa-users"></i><h3>+</h3><p>Active member </p></div>
+                        <div class="stat-box"><i class="fas fa-calendar-alt"></i><h3>+</h3><p>Annual event  </p></div>
+                        <div class="stat-box"><i class="fas fa-trophy"></i><h3>+</h3><p>Local award </p></div>
+                        <div class="stat-box"><i class="fas fa-handshake"></i><h3>+</h3><p>Partnerships
+                        </p></div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    
+        <!-- صفحة الفعاليات -->
+        <section id="events" class="page-section">
+            <section class="page-hero">
+                <h1>Events</h1>
+                <p>Explore the latest events and competitions</p>
+            </section>
+            
+            <section class="section">
+                <div class="container">
+                    <div class="events-grid">
+                        <!-- <div class="event-card">
+                            <span class="date">2026</span>
+                            <h3>ورشة عمل Python</h3>
+                            <p>تعلم البرمجة بلغة بايثون.</p>
+                            <button class="btn-event">سجل الآن</button> -->
+                        </div>
+                        <div class="event-card">
+                            <span class="date">2026</span>
+                            <h3>ورشة اردوينو</h3>
+                            <p> join and learn</p>
+                            <a href="https://www.facebook.com/share/p/181uNSXeoL/?mibextid=wwXIfr" target="_blank" class="btn-event">join now </a>
+                        </div>
+                        <!-- <div class="event-card">
+                            <span class="date">2026</span>
+                            <h3>IEEE Xtreme</h3>
+                            <p>مسابقة البرمجة العالمية.</p>
+                            <button class="btn-event">سجل الآن</button>
+                        </div> -->
+                    </div>
+                </div>
+            </section>
+        </section>
+    
+        <!-- صفحة الأعضاء -->
+        <section id="team" class="page-section">
+            <section class="page-hero">
+                <h1>Team work </h1>
+                <p>IEEE Damietta branch team</p>
+            </section>
+            
+            <section class="section">
+                <div class="container">
+                    <div class="team-grid">
+                        <div class="team-card">
+                            <div class="photo"><i class="fas fa-user"></i></div>
+                            <h3></h3>
+                            <p class="role">President</p>
+                            <p class="year"> </p>
+                        </div>
+                        <div class="team-card">
+                            <div class="photo"><i class="fas fa-user"></i></div>
+                            <h3> </h3>
+                            <p class="role">Vice President</p>
+                            <p class="year"> </p>
+                        </div>
+                        <div class="team-card">
+                            <div class="photo"><i class="fas fa-user"></i></div>
+                            <h3> </h3>
+                            <p class="role">Secretary</p>
+                            <p class="year">- </p>
+                        </div>
+                        <div class="team-card">
+                            <div class="photo"><i class="fas fa-user"></i></div>
+                            <h3> </h3>
+                            <p class="role">Treasurer</p>
+                            <p class="year"></p>
+                        </div>
+                        <div class="team-card">
+                            <div class="photo"><i class="fas fa-user"></i></div>
+                            <h3> </h3>
+                            <p class="role">Technical Head</p>
+                            <p class="year"> </p>
+                        </div>
+                        <!-- <div class="team-card">
+                            <div class="photo"><i class="fas fa-user"></i></div>
+                            <h3> </h3>
+                            <p class="role"> </p>
+                            <p class="year"></p> -->
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    
+        <!-- صفحة المدونة (Blogs) -->
+        <section id="blogs" class="page-section">
+            <section class="page-hero">
+                <h1>Blogs</h1>
+                <p>Follow the latest articles and tech news</p>
+            </section>
+            
+            <section class="section">
+                <div class="container">
+                    <div class="blog-grid">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-date">15 مارس 2026</p>
+                                <h3 class="blog-title">كيف تبدأ في تعلم البرمجة من الصفر</h3>
+                                <p class="blog-excerpt">
+                                    تعلم البرمجة ليس بالأمر الصعب إذا اتبعت الخطوات الصحيحة. 
+                                    في هذا المقال سنشرح لك أفضل الطرق للبدء في عالم البرمجة.
+                                </p>
+                                <button class="btn-read-more">Learn more </button>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-date">10 مارس 2026</p>
+                                <h3 class="blog-title">مستقبل الذكاء الاصطناعي في الهندسة</h3>
+                                <p class="blog-excerpt">
+                                    الذكاء الاصطناعي يغير وجه الهندسة بشكل كبير. 
+                                    اكتشف كيف يمكن للذكاء الاصطناعي أن يساعدك في مشاريعك الهندسية.
+                                </p>
+                                <button class="btn-read-more">Learn more  </button>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-date">5 مارس 2026</p>
+                                <h3 class="blog-title">أفضل 5 لغات برمجة للطلاب</h3>
+                                <p class="blog-excerpt">
+                                    إذا كنت طالب هندسة وتريد تعلم البرمجة، 
+                                    فهذه أفضل 5 لغات برمجة يجب أن تتعلمها في 2026.
+                                </p>
+                                <button class="btn-read-more">Learn more  </button>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-date">1 مارس 2026</p>
+                                <h3 class="blog-title">كيف تحصل على شهادة IEEE</h3>
+                                <p class="blog-excerpt">
+                                    شهادات IEEE معتمدة عالمياً وتفتح لك أبواباً كثيرة في سوق العمل. 
+                                    تعرف على كيفية الحصول عليها.
+                                </p>
+                                <button class="btn-read-more">Learn more  </button>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-date">25 فبراير 2026</p>
+                                <h3 class="blog-title">أفضل مشاريع التخرج في الهندسة</h3>
+                                <p class="blog-excerpt">
+                                    أفكار مشاريع تخرج مبتكرة ومميزة يمكن أن تميزك في سوق العمل. 
+                                    اكتشف أفضل الأفكار لعام 2026.
+                                </p>
+                                <button class="btn-read-more">Learn more  </button>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-date">20 فبراير 2026</p>
+                                <h3 class="blog-title">كيف تبني شبكة علاقات مهنية</h3>
+                                <p class="blog-excerpt">
+                                    بناء شبكة علاقات مهنية قوية يمكن أن يفتح لك فرصاً لا حصر لها. 
+                                    تعلم أفضل الطرق لبناء هذه الشبكة.
+                                </p>
+                                <button class="btn-read-more">Learn more  </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    
+        <!-- صفحة اللجان (Committees) -->
+        <section id="committees" class="page-section">
+            <section class="page-hero">
+                <h1>Committees</h1>
+                <p> Learn about the committees of the IEEE branch in Damietta</p>
+            </section>
+            
+            <section class="section">
+                <div class="container">
+                    <div class="committees-grid">
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة العلاقات العامة</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن التواصل مع الطلاب والشركات الخارجية 
+                                ونشر أخبار الفرع على منصات التواصل الاجتماعي.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="committee-title">اللجنة التقنية</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن تنظيم الورش التقنية والمسابقات 
+                                وتقديم الدعم الفني للأنشطة المختلفة.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة التعليم</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن تنظيم الدورات التعليمية والندوات 
+                                وتوفير المواد التعليمية للطلاب.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة الشراكات</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن بناء علاقات مع الشركات 
+                                والجامعات الأخرى للحصول على فرص تدريب ودعم.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة المسابقات</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن تنظيم المسابقات الداخلية 
+                                وإعداد الفرق للمسابقات الخارجية.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة العضوية</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن تسجيل الأعضاء الجدد 
+                                ومتابعة نشاط الأعضاء الحاليين.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة التوظيف</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن توفير فرص تدريب ووظائف 
+                                للطلاب من خلال شركاء الفرع.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة التصميم</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن تصميم المواد الإعلانية 
+                                والهوية البصرية للأنشطة المختلفة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    
+        <!-- صفحة الفروع (Chapters) -->
+        <section id="chapters" class="page-section">
+            <section class="page-hero">
+                <h1>Branches
+                </h1>
+                <p>Learn about IEEE branches in Egypt and worldwide</p>
+            </section>
+            
+            <section class="section">
+                <div class="container">
+                    <div class="chapters-container">
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Damietta Student Branch</h3>
+                                <p>جامعة دمياط - مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Mansoura Student Branch</h3>
+                                <p>جامعة المنصورة - مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Cairo Student Branch</h3>
+                                <p>جامعة القاهرة - مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Alexandria Student Branch</h3>
+                                <p>جامعة الإسكندرية - مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Ain Shams Student Branch</h3>
+                                <p>جامعة عين شمس - مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Cairo University</h3>
+                                <p>جامعة القاهرة - مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Global</h3>
+                                <p>المقر العالمي - IEEE.org</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<!-- صفحة الأسئلة الشائعة (FAQ) -->
+<section id="faq" class="page-section">
+    <section class="page-hero">
+        <h1>Frequently asked questions </h1>
+        <p> Answers to the most frequently asked questions</p>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>ما هو IEEE؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>IEEE هي أكبر منظمة مهنية تقنية في العالم، وتضم أكثر من 420,000 عضو في أكثر من 160 دولة. تهدف إلى تطوير التكنولوجيا لصالح البشرية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>كيف يمكنني الانضمام إلى فرع IEEE دمياط؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يمكنك الانضمام عن طريق الضغط على زر "انضم الآن" في القائمة العلوية أو في الصفحة الرئيسية، ثم ملء نموذج التسجيل. العضوية مجانية للطلاب.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>هل العضوية مجانية؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، العضوية في فرع IEEE دمياط مجانية تماماً للطلاب. نحن نوفر ورش عمل مجانية، شهادات معتمدة، وفرص تدريب.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>ما هي مميزات العضوية؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>مميزات العضوية تشمل: ورش عمل مجانية، شهادات معتمدة من IEEE، فرص تدريب في شركات كبرى، المشاركة في المسابقات، وبناء شبكة علاقات مهنية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>هل يمكنني المشاركة في الفعاليات بدون عضوية؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، يمكنك المشاركة في معظم الفعاليات بدون عضوية، لكن الأعضاء يحصلون على أولوية في التسجيل ومزايا إضافية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>ما هي متطلبات العضوية؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>المتطلبات هي أن تكون طالباً في إحدى كليات الهندسة في جامعة دمياط، وأن تملأ نموذج التسجيل. لا توجد متطلبات إضافية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>كيف يمكنني التواصل مع الفرع؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يمكنك التواصل معنا عبر صفحاتنا على وسائل التواصل الاجتماعي الموضحة في الفوتر، أو عبر البريد الإلكتروني الرسمي للفرع.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>هل توجد ورش عمل أسبوعية؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نوفر ورش عمل دورية في مختلف المجالات التقنية مثل البرمجة، الروبوتات، الذكاء الاصطناعي، وغيرها. تابعنا على وسائل التواصل لمعرفة المواعيد.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<!-- صفحة الانضمام -->
+<section id="join" class="page-section">
+    <section class="page-hero">
+        <h1> Join us </h1>
+        <p>Be part of the largest student tech community</p>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="join-grid">
+                <div class="join-info">
+                    <h2>مميزات العضوية</h2>
+                    <ul class="benefits">
+                        <li><i class="fas fa-certificate"></i><div><strong>شهادة معتمدة</strong><p>من IEEE العالمية</p></div></li>
+                        <li><i class="fas fa-laptop-code"></i><div><strong>ورش مجانية</strong><p>جميع الورش مجانية</p></div></li>
+                        <li><i class="fas fa-trophy"></i><div><strong>المسابقات</strong><p>شارك واربح</p></div></li>
+                        <li><i class="fas fa-network-wired"></i><div><strong>شبكة علاقات</strong><p>تواصل مع مهندسين</p></div></li>
+                        <li><i class="fas fa-briefcase"></i><div><strong>فرص تدريب</strong><p>في شركات رائدة</p></div></li>
+                    </ul>
+                </div>
+                <div class="join-form">
+                    <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLScKF6I45eSUp0AUsOUyNF1qZccSRt1lw5S61VErlPVeZPm6LQ/viewform?usp=header" 
+                    width="100%" 
+                    height="800" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    جاري التحميل…
+                </iframe>
+                    <h3>نموذج التسجيل</h3>
+                    <!-- <form onsubmit="submitForm(event)">
+                        <input type="text" placeholder="الاسم الكامل" required>
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                        <input type="tel" placeholder="رقم الهاتف" required>
+                        <input type="text" placeholder="الجامعة" required>
+                        <select required>
+                            <option value="">اختر الكلية</option>
+                            <option>هندسة حاسبات</option>
+                            <option>هندسة كهربائية</option>
+                            <option>هندسة ميكانيكية</option>
+                            <option>هندسة مدنية</option>
+                        </select>
+                        <select required>
+                            <option value="">السنة الدراسية</option>
+                            <option>فرقة أولى</option>
+                            <option>فرقة ثانية</option>
+                            <option>فرقة ثالثة</option>
+                            <option>فرقة رابعة</option>
+                        </select> -->
+                        <!-- <button type="submit">إرسال الطلب</button> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<!-- الفوتر -->  
+<!-- 
+<footer>
+    <div class="container">
+        <div class="social-links">
+            <a href="https://www.facebook.com/share/1E1xosorsF/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/ieee_dsb?igsh=MThhZXk1amY1MTNudg=="><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/ieee-dsb/"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.tiktok.com/@ieee_damietta?_r=1&_t=ZS-94Pl7jB3MQu"><i class="fab fa-tiktok"></i></a>
+        </div>
+        <p>© 2022-2026 IEEE Damietta Student Branch</p>
+    </div>
+</footer>
+ -->
+
+<!-- الفوتر -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <!-- Location على الشمال -->
+            <div class="footer-location">
+                <h3>Location</h3>
+                <p>جامعة دمياط - مصر</p>
+                <p>دمياط، مصر</p>
+            </div>
+            
+            <!-- Social Links في الوسط -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1E1xosorsF/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/ieee_dsb?igsh=MThhZXk1amY1MTNudg=="><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/ieee-dsb/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.tiktok.com/@ieee_damietta?_r=1&_t=ZS-94Pl7jB3MQu"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <!-- Contact Us على اليمين -->
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email: eldeeb.9@example.com</p>
+                <p>Phone: +20 109 345 9909</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2022-2026 IEEE Damietta Student Branch</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+<!-- JavaScript -->
+<script>
+    function showPage(pageId) {
+        var pages = document.querySelectorAll('.page-section');
+        for (var i = 0; i < pages.length; i++) {
+            pages[i].classList.remove('active');
+        }
+        
+        var links = document.querySelectorAll('.nav-link');
+        for (var i = 0; i < links.length; i++) {
+            links[i].classList.remove('active');
+        }
+        
+        var targetPage = document.getElementById(pageId);
+        if (targetPage) {
+            targetPage.classList.add('active');
+        }
+        
+        var activeLink = document.querySelector('[data-page="' + pageId + '"]');
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
+        
+        window.scrollTo(0, 0);
+        document.getElementById('nav-menu').classList.remove('active');
+    }
+
+    var navLinks = document.querySelectorAll('.nav-link');
+    for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener('click', function() {
+            var pageId = this.getAttribute('data-page');
+            showPage(pageId);
+        });
+    }
+
+    function toggleMenu() {
+        document.getElementById('nav-menu').classList.toggle('active');
+    }
+
+    function submitForm(event) {
+        event.preventDefault();
+        alert('✅ تم إرسال طلبك بنجاح! سنتواصل معك قريباً');
+        event.target.reset();
+    }
+
+
+
+
+ 
+
+
+
+    // Intro Animation Script
+document.addEventListener('DOMContentLoaded', function() {
+    const typingText = document.getElementById('typing-text');
+    const textToType = "  Welcome To IEEE Damietta Student Branch";
+    let index = 0;
+    
+    // Typing Effect
+    function typeWriter() {
+        if (index < textToType.length) {
+            typingText.innerHTML += textToType.charAt(index);
+            index++;
+            setTimeout(typeWriter, 100); // سرعة الكتابة
+        } else {
+            // بعد انتهاء الكتابة، انتظر 3 ثواني ثم أغلق الـ Intro
+            setTimeout(() => {
+                closeIntro();
+            }, 1000);
+        }
+    }
+    
+    // Start typing after a short delay
+    setTimeout(typeWriter, 500);
+});
+
+// Function to close intro
+function closeIntro() {
+    const introOverlay = document.getElementById('introOverlay');
+    introOverlay.classList.add('hidden');
+    
+    // Remove from DOM after animation
+    setTimeout(() => {
+        introOverlay.style.display = 'none';
+    }, 500);
+}
+
+
+
+// Typing Effect for Home Page
+function typeWriterText(elementId, text, speed, delay) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    
+    let index = 0;
+    element.innerHTML = '';
+    element.classList.add('typing-cursor');
+    
+    setTimeout(() => {
+        function type() {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, speed);
+            } else {
+                element.classList.remove('typing-cursor');
+                element.classList.add('active');
+            }
+        }
+        type();
+    }, delay);
+}
+
+// Call this function after intro closes
+function startHomeTyping() {
+    // Title
+    typeWriterText('home-title', 'Welcome to IEEE Damietta Branch', 1, 100);
+    
+    // Description
+    typeWriterText('home-description', 'We offer the best educational and technical opportunities for engineering students.', 2, 1000);
+    
+    // About Title
+    typeWriterText('about-title', 'About us', 10, 1000);
+    
+    // About Text
+    typeWriterText('about-text', 'The IEEE student branch at Damietta University is a student organization that aims to develop the technical and leadership skills of engineering students.', 10, 1000);
+}
+
+
+
+
+// Modify the closeIntro function to start home typing
+function closeIntro() {
+    const introOverlay = document.getElementById('introOverlay');
+    introOverlay.classList.add('hidden');
+    
+    // Remove from DOM after animation
+    setTimeout(() => {
+        introOverlay.style.display = 'none';
+        // Start home typing after intro closes
+        startHomeTyping();
+    }, 500);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+    // FAQ Accordion Functionality
+    document.querySelectorAll('.faq-question').forEach(function(question) {
+        question.addEventListener('click', function() {
+            var faqItem = this.parentElement;
+            var isActive = faqItem.classList.contains('active');
+            
+            // Close all other items
+            document.querySelectorAll('.faq-item').forEach(function(item) {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+</script>
+</body>
+</html>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
