@@ -2187,9 +2187,9 @@ footer {
     background-position: center;
     background-repeat: no-repeat;
     /* تأثير تثبيت الصورة عند السكرول (اختياري بس شيك جداً) */
-    background-attachment: fixed; 
-    
-    padding: 100px 0; /* مساحة إضافية عشان الصورة تظهر أكتر */
+    background-attachment: scroll; 
+/*     
+    padding: 100px 0; مساحة إضافية عشان الصورة تظهر أكتر */
 }
 
 /* طبقة تعتيم عشان الكلام يظهر (مهم جداً) */
@@ -2229,14 +2229,14 @@ footer {
 }
 
 /* للموبايل عشان ميبوظش */
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
     .about-section-header {
         min-height: 350px;
     }
     .about-section-header h1 {
         font-size: 2.5rem;
     }
-}
+} */
 
 /* تفعيل التأثير للأجهزة القوية (الكمبيوتر) فقط */
 @media (min-width: 1024px) {
