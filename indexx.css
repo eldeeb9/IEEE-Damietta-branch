@@ -2238,7 +2238,25 @@ footer {
     }
 }
 
+/* تفعيل التأثير للأجهزة القوية (الكمبيوتر) فقط */
+@media (min-width: 1024px) {
+    .about-section-header {
+        background-attachment: fixed;
+    }
+}
 
+/* حل مشكلة الموبايل */
+@media (max-width: 768px) {
+    .about-section-header {
+        min-height: 300px; /* تقليل الارتفاع شوية للموبايل */
+        background-attachment: scroll !important; /* إجبار الصورة على الظهور بشكل عادي */
+        background-position: center center;
+    }
+    
+    .about-section-header h1 {
+        font-size: 2.2rem; /* تصغير الخط عشان ميبوظش */
+    }
+}
 
 
 
