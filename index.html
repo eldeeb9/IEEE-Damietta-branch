@@ -1,0 +1,1674 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IEEE Damietta Student Branch</title>
+    <link rel="stylesheet" href="css index.css">
+    <!-- <script src="java prac.js"></script> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   
+
+</head>
+<body>
+
+
+
+
+    <!-- Intro Animation Section -->
+<div class="intro-overlay" id="introOverlay">
+    <div class="intro-content">
+        <div class="intro-image">
+            <img src="photo_2026-03-03_02-08-08.jpg" alt="IEEE Logo">
+        </div>
+        <div class="intro-text">
+            <h1 id="typing-text"></h1>
+        </div>
+        <div class="intro-btn">
+            <!-- <button onclick="closeIntro()">ابدأ التصفح</button> -->
+        </div>
+    </div>
+</div>
+
+
+<div class="ieee-bg-text">IEEE</div>
+
+
+
+
+
+
+    <!-- الهيدر -->
+    <header>
+
+
+
+        <div class="container">
+            <div class="logo">
+                <img src="photo_2026-03-03_02-08-08.jpg" alt="IEEE">
+                <span>IEEE Damietta</span>
+            </div> 
+            <nav>
+                <ul id="nav-menu">
+                    <li><a class="nav-link active" data-page="home">Home</a></li>
+                    <li><a class="nav-link" data-page="about">About us </a></li>
+                    <li><a class="nav-link" data-page="events">Events</a></li>
+                    <!-- <li><a class="nav-link" data-page="team">Membership</a></li> -->
+                    <li><a class="nav-link" data-page="blogs">Blogs</a></li>
+                    <!-- <li><a class="nav-link" data-page="committees">Committees</a></li>
+                    <li><a class="nav-link" data-page="chapters">Branches</a></li> -->
+                    <li><a class="nav-link" data-page="faq"> FAQ</a></li>
+                    <li><a class="nav-link btn-join" data-page="join">Join now</a></li>
+
+                    <a href="https://ieeedsb.lovable.app" target="_blank" class="btn-portal">
+                        Admins <i class="fas fa-external-link-alt"></i>
+                    </a>
+                </ul>
+            </nav>
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    
+    <!-- الصفحة الرئيسية
+    <section id="home" class="page-section active">
+        <section class="hero">
+            <div class="hero-content">
+                <h1>  Welcome to IEEE Damietta Branch </h1>
+                <p>We offer the best educational and technical opportunities for engineering students.
+                </p>
+                <button class="btn-primary" onclick="showPage('join')">Join Now </button>
+            </div>
+        </section>
+        
+        <section class="section">
+            <div class="container">
+                <div class="about-content">
+                    <h2> About us</h2>
+                    <p>The IEEE student branch at Damietta University is a student organization that aims to develop the technical and leadership skills of engineering students. </p>
+                    <button class="btn-primary" onclick="showPage('about')">Learn more </button>
+                </div>
+            </div>
+        </section> -->
+<!-- الصفحة الرئيسية -->
+<section id="home" class="page-section active">
+    <section class="hero">
+        <div class="hero-content">
+            <h1 id="home-title">Welcome to IEEE Damietta Branch</h1>
+            <p id="home-description">We offer the best educational and technical opportunities for engineering students.</p>
+            <button class="btn-primary" onclick="showPage('join')">Join Now</button>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <h2 id="about-title">About us</h2>
+                <p id="about-text">The IEEE student branch at Damietta University is a student organization that aims to develop the technical and leadership skills of engineering students</p>
+                <button class="btn-primary" onclick="showPage('about')">Learn more</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- <section class="section" style="background: #f5f5f5;">
+        <div class="container">
+            <h2>Upcoming events</h2>
+            <div class="events-grid">
+                <div class="event-card">
+                    <span class="date">2026</span>
+                    <h3>Python</h3>
+                    <p>تعلم البرمجة بلغة بايثون من الصفر</p>
+                    <button class="btn-event" onclick="showPage('events')">Details</button>
+                </div>
+                <div class="event-card">
+                    <span class="date">2026</span>
+                    <h3>ورشة الاردوينو</h3>
+                    <p>شارك في ورش الاردوينو</p>
+                    <button class="btn-event" onclick="showPage('events')">Details</button>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Upcoming Events</h2>
+            
+            <div class="special-event-wrapper">
+                <div class="season-card">
+                    <img src="photo_2026-03-17_06-43-11.jpg" alt="Season Opening" class="season-bg">
+                    
+                    <div class="season-overlay">
+                        <div class="season-text">
+                            <span class="event-badge">An upcoming event</span>
+                            <h3>Season Opening</h3>
+                            <p>استعدوا لأقوى بداية لموسم IEEE Damietta الجديد. ! </p>
+                            
+                            <div class="event-actions">
+                                <a href="رابط-فيسبوك" target="_blank" class="main-event-btn">
+                                    <i class="fab fa-facebook-f"></i> Details
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+
+<!-- صفحة من نحن -->
+<section id="about" class="page-section">
+    <section class="about-section-header">
+        <div class="about-content-box">
+        <h1>About us</h1>
+        <p>Learn more about IEEE at Damietta University</p>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <h1>Our Executive Committee</h1>
+                <h5>Meet the team behind IEEE Damietta Student Branch</h5>
+            </div>
+            
+            <!-- استبدل قسم الفريق التنفيذي ده -->
+    <div class="team-grid">
+    <!-- Chairman -->
+        <div class="team-card" data-social='{
+        "facebook": "https://www.facebook.com/share/1BEdUTg7Pc/",
+        "instagram": "https://www.instagram.com/adham_rezk33?igsh=bTdxZmt2djNtNDg2", 
+        "linkedin": "https://www.linkedin.com/in/adham-elnafarawy?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+        }'>
+        <div class="team-photo">
+            <img src="photo_2026-03-12_05-00-13.jpg" alt="Adham Elnfarawy">
+        </div>
+        <div class="team-info">
+            <h3>Adham Elnfarawy</h3>
+            <p class="role">Chairman</p>
+            <p class="year">2025-2026</p>
+        </div>
+        <div class="team-contact">
+            <button class="contact-btn" onclick="openContactModal('Adham Elnfarawy', 'Chairman', this.parentElement.parentElement.dataset.social)">
+                <i class="fas fa-envelope"></i> Contact me
+            </button>
+        </div>
+        </div>
+
+    <!-- Vice Chair -->
+        <div class="team-card" data-social='{
+           "facebook": "https://www.facebook.com/share/1DLzURQ9sK/?mibextid=wwXIfr",
+           "instagram": "https://www.instagram.com/rovanayman_?igsh=aDd0enhsYnBrbzJt&utm_source=qr", 
+           "linkedin": "https://www.linkedin.com/in/rovan-rashad-196b7231a?utm_source=share_via&utm_content=profile&utm_medium=member_ios"
+    }'>
+        <div class="team-photo">
+            <img src="photo_2026-03-15_15-12-09.jpg" alt="Rovan Rashad">
+        </div>
+        <div class="team-info">
+            <h3>Rovan Rashad</h3>
+            <p class="role">Vice Chair technical</p>
+            <p class="year">2025-2026</p>
+        </div>
+        <div class="team-contact">
+            <button class="contact-btn" onclick="openContactModal('Rovan Rashad ', 'Vice Chair', this.parentElement.parentElement.dataset.social)">
+                <i class="fas fa-envelope"></i> Contact me
+            </button>
+        </div>
+        </div>
+
+        <!-- Vice Chair non-->
+        <div class="team-card" data-social='{
+            "facebook": "https://www.facebook.com/share/1DT891zDJp/?mibextid=wwXIfr",
+            "instagram": "https://www.instagram.com/me_du_sa.11?igsh=OG55eHgxM2Ixdnc0&utm_source=qr", 
+            "linkedin": "https://www.linkedin.com/in/basmala-khalid-76b2a9335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+     }'>
+         <div class="team-photo">
+             <img src="photo_2026-03-15_15-12-32.jpg" alt="Basmala Elkhawaga">
+         </div>
+         <div class="team-info">
+             <h3>Basmala Elkhawaga</h3>
+             <p class="role">Vice Chair Non-technical</p>
+             <p class="year">2025-2026</p>
+         </div>
+         <div class="team-contact">
+             <button class="contact-btn" onclick="openContactModal('Basmala Elkhawaga ', 'Vice Chair Non-technical', this.parentElement.parentElement.dataset.social)">
+                 <i class="fas fa-envelope"></i> Contact me
+             </button>
+         </div>
+         </div>
+ 
+
+    <!-- Secretary -->
+    <div class="team-card" data-social='{
+        "facebook": "https://www.facebook.com/omar.zaky.8039",
+        "instagram": "https://www.instagram.com/omar___zaky?igsh=MTQzZnc3dHJjM2JtMw== ", 
+        "linkedin": "https://www.linkedin.com/in/omar-zaky-072674221?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+               }'>
+        <div class="team-photo">
+            <img src="photo_2026-03-15_15-13-44.jpg" alt="Omar Zaky">
+        </div>
+        <div class="team-info">
+            <h3>Omar Zaky</h3>
+            <p class="role">Secretary</p>
+            <p class="year">2025-2026</p>
+        </div>
+        <div class="team-contact">
+            <button class="contact-btn" onclick="openContactModal('Omar Zaky', 'Secretary', this.parentElement.parentElement.dataset.social)">
+                <i class="fas fa-envelope"></i> Contact me
+            </button>
+        </div>
+    </div>
+
+    <!-- Treasurer -->
+    <div class="team-card" data-social='{
+        "facebook": "https://www.facebook.com/YoussefAbdelaziiim",
+        "instagram": "https://www.instagram.com/youssef._.abdelazim ", 
+        "linkedin": "https://linkedin.com/in/youssef-mohamed10"
+    }'>
+        <div class="team-photo">
+            <img src="photo_2026-03-15_15-13-38.jpg" alt="Youssef Abdelazeem">
+        </div>
+        <div class="team-info">
+            <h3>Youssef Abdelazeem</h3>
+            <p class="role">Treasurer</p>
+            <p class="year">2025-2026</p>
+        </div>
+        <div class="team-contact">
+            <button class="contact-btn" onclick="openContactModal('Youssef Abdelazeem', 'Treasurer', this.parentElement.parentElement.dataset.social)">
+                <i class="fas fa-envelope"></i> Contact me
+            </button>
+        </div>
+    </div>
+
+
+
+    <!-- Treasurer -->
+    <div class="team-card" data-social='{
+        "facebook": "https://www.facebook.com/profile.php?id=100025767703104",
+        "instagram": "https://www.instagram.com/nada_ahmed1412?igsh=YzljYTk1ODg3Zg==", 
+        "linkedin": "https://www.linkedin.com/in/nada-elhoseny-8741a634b?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+    }'>
+        <div class="team-photo">
+            <img src="photo_2026-03-15_15-12-25.jpg" alt="Nada Elhoseny">
+        </div>
+        <div class="team-info">
+            <h3> Nada Elhoseny</h3>
+            <p class="role">Treasurer</p>
+            <p class="year">2025-2026</p>
+        </div>
+        <div class="team-contact">
+            <button class="contact-btn" onclick="openContactModal(' Nada Elhoseny', 'Treasurer', this.parentElement.parentElement.dataset.social)">
+                <i class="fas fa-envelope"></i> Contact me
+            </button>
+        </div>
+    </div>
+
+    <!-- Webmaster -->
+    <div class="team-card" data-social='{
+        "facebook": "https://www.facebook.com/share/1bxSnFahJS/?mibextid=wwXIfr",
+        "instagram": "https://www.instagram.com/eldeeb_9?igsh=dWxlYWNnM3hzdHU2&utm_source=qr", 
+        "linkedin": "https://www.linkedin.com/in/ahmed-eldeeb-696983370"
+    }'>
+        <div class="team-photo">
+            <img src="photo_2026-03-12_02-14-19.jpg" alt="Ahmed Eldeeb">
+        </div>
+        <div class="team-info">
+            <h3>Ahmed Eldeeb</h3>
+            <p class="role">Webmaster</p>
+            <p class="year">2025-2026</p>
+        </div>
+        <div class="team-contact">
+            <button class="contact-btn" onclick="openContactModal('Ahmed Eldeeb', 'Webmaster', this.parentElement.parentElement.dataset.social)">
+                <i class="fas fa-envelope"></i> Contact me
+            </button>
+        </div>
+    </div>
+</div>
+</section>
+    
+<!-- Contact Modal -->
+<div class="contact-modal" id="contactModal">
+    <div class="modal-content">
+           <span class="close-btn" onclick="closeContactModal()">&times;</span>
+           <h2 id="modal-name">Name</h2>
+           <p id="modal-role" class="modal-role">Role</p>
+        <div class="modal-links">
+            <a href="#" class="modal-link facebook" target="_blank">
+              <i class="fab fa-facebook"></i> Facebook
+            </a>
+            <a href="#" class="modal-link instagram" target="_blank">
+              <i class="fab fa-instagram"></i> Instagram
+             </a>
+            <a href="#" class="modal-link linkedin" target="_blank">
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>
+        </div>
+    </div>
+</div>
+    
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <h1>Our Vision & Mission</h1>
+                <div class="vision-mission-grid">
+                    <div class="vision-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Our Vision</h3>
+                        <h5>To be the leading student branch in Egypt, empowering engineering students with technical skills and leadership opportunities.</h5>
+                    </div>
+                    <div class="mission-card">
+                        <i class="fas fa-bullseye"></i>
+                        <h3>Our Mission</h3>
+                        <h5>To provide technical workshops, training opportunities, and international certificates to bridge the gap between academia and industry.</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="about-content">
+                <h1>Our Partners</h1>
+                <div class="partners-grid">
+                    <div class="partner-item">
+                        <i class="fas fa-building"></i>
+                        <h3>Corporate Partners</h3>
+                        <h5>Leading tech companies</h5>
+                    </div>
+                    <div class="partner-item">
+                        <i class="fas fa-university"></i>
+                        <h3>Academic Partners</h3>
+                        <h5>Top universities in Egypt</h5>
+                    </div>
+                    <div class="partner-item">
+                        <i class="fas fa-globe"></i>
+                        <h3>International Partners</h3>
+                        <h5>IEEE global network</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="section" style="background: linear-gradient(135deg, #0056b3, #00a8e8); color: white;">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-box">
+                    <i class="fas fa-users"></i>
+                    <h3>500+</h3>
+                    <p>Active Members</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h3>20+</h3>
+                    <p>Annual Events</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-trophy"></i>
+                    <h3>10+</h3>
+                    <p>Local Awards</p>
+                </div>
+                <div class="stat-box">
+                    <i class="fas fa-handshake"></i>
+                    <h3>10+</h3>
+                    <p>Corporate Partners</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+<!-- صفحة الفعاليات -->
+
+
+
+
+
+
+
+<section id="events" class="page-section">
+    <section class="page-hero">
+        <h1>Events</h1>
+        <p>Explore the latest events and competitions</p>
+    </section>
+
+
+
+
+
+
+<!-- <section id="events" class="page-section"> -->
+    <div class="container">
+        <!-- <h2 class="section-title"> Coming Events</h2> -->
+        
+        <!-- <div id="event-countdown" class="countdown-container">
+            <div class="countdown-item">
+                <span id="days">05</span>
+                <p>يوم</p>
+            </div>
+            <div class="countdown-item">
+                <span id="hours">00</span>
+                <p>ساعة</p>
+            </div>
+            <div class="countdown-item">
+                <span id="minutes">00</span>
+                <p>دقيقة</p>
+            </div>
+            <div class="countdown-item">
+                <span id="seconds">00</span>
+                <p>ثانية</p>
+            </div>
+        </div> -->
+
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="photo_2026-03-17_00-20-03.jpg" alt="Event Name">
+                    <span class="event-tag">Now</span>
+                </div>
+                <div class="event-content">
+                    <h3> IEEE DSB IFTAR 2026</h3>
+                    <p>فطار IEEE رمضان 2026</p>
+                    <a href="https://www.facebook.com/share/p/1CFp3H6Q6m/" target="_blank" class="event-btn">
+                        <i class="fab fa-facebook-f"></i> Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-image">
+                    <img src="photo_2026-03-17_00-37-47.jpg" alt="Event Name">
+                    <span class="event-tag">Now</span>
+                </div>
+                <div class="event-content">
+                    <h3> Intensive workshops 2026</h3>
+                    <p>Join and learn</p>
+                    <a href="https://www.facebook.com/share/p/181uNSXeoL/?mibextid=wwXIfr" target="_blank" class="event-btn">
+                        <i class="fab fa-facebook-f"></i> Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+<section id="events" class="page-section">
+    <section class="page-hero">
+        <h1>Events</h1>
+        <p>Explore the latest events and competitions</p>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="events-grid">
+                <div class="event-card">
+                    <span class="date">2026</span>
+                    <h3>ورشة اردوينو</h3>
+                    <p>Join and learn</p>
+                    <a href="https://www.facebook.com/share/p/181uNSXeoL/?mibextid=wwXIfr" target="_blank" class="btn-event">Join Now</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+</section> -->
+
+
+
+
+
+
+
+
+
+
+
+        <!-- صفحة المدونة (Blogs) -->
+
+        <section id="blogs" class="page-section blogs-coming-soon">
+            <div class="container">
+                <div class="coming-soon-content">
+                    <div class="icon-box">
+                        <i class="fas fa-pen-nib"></i>
+                    </div>
+                    <h1>Blogs IEEE Damietta</h1>
+                    <p>نحن نعمل حالياً على تجهيز محتوى تقني مميز يثري معرفتكم. انتظرونا قريباً بمقالات في مختلف المجالات الهندسيّة والتقنيّة!</p>
+                    
+                    <div class="launch-progress">
+                        <div class="progress-bar"></div>
+                    </div>
+                    
+                    <div class="stay-tuned">
+                        <span>Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- <section id="blogs" class="page-section">
+            <section class="page-hero">
+                <h1>Blogs</h1>
+                <p>Follow the latest articles and tech news</p>
+            </section>
+            
+            <section class="section">
+                <div class="container">
+                    <div class="blog-grid">
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-date">15 مارس 2026</p>
+                                <h3 class="blog-title">كيف تبدأ في تعلم البرمجة من الصفر</h3>
+                                <p class="blog-excerpt">
+                                    تعلم البرمجة ليس بالأمر الصعب إذا اتبعت الخطوات الصحيحة. 
+                                    في هذا المقال سنشرح لك أفضل الطرق للبدء في عالم البرمجة.
+                                </p>
+                                <button class="btn-read-more">Learn more </button>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-date">10 مارس 2026</p>
+                                <h3 class="blog-title">مستقبل الذكاء الاصطناعي في الهندسة</h3>
+                                <p class="blog-excerpt">
+                                    الذكاء الاصطناعي يغير وجه الهندسة بشكل كبير. 
+                                    اكتشف كيف يمكن للذكاء الاصطناعي أن يساعدك في مشاريعك الهندسية.
+                                </p>
+                                <button class="btn-read-more">Learn more  </button>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-date">5 مارس 2026</p>
+                                <h3 class="blog-title">أفضل 5 لغات برمجة للطلاب</h3>
+                                <p class="blog-excerpt">
+                                    إذا كنت طالب هندسة وتريد تعلم البرمجة، 
+                                    فهذه أفضل 5 لغات برمجة يجب أن تتعلمها في 2026.
+                                </p>
+                                <button class="btn-read-more">Learn more  </button>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <i class="fas fa-certificate"></i>
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-date">1 مارس 2026</p>
+                                <h3 class="blog-title">كيف تحصل على شهادة IEEE</h3>
+                                <p class="blog-excerpt">
+                                    شهادات IEEE معتمدة عالمياً وتفتح لك أبواباً كثيرة في سوق العمل. 
+                                    تعرف على كيفية الحصول عليها.
+                                </p>
+                                <button class="btn-read-more">Learn more  </button>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-date">25 فبراير 2026</p>
+                                <h3 class="blog-title">أفضل مشاريع التخرج في الهندسة</h3>
+                                <p class="blog-excerpt">
+                                    أفكار مشاريع تخرج مبتكرة ومميزة يمكن أن تميزك في سوق العمل. 
+                                    اكتشف أفضل الأفكار لعام 2026.
+                                </p>
+                                <button class="btn-read-more">Learn more  </button>
+                            </div>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="blog-content">
+                                <p class="blog-date">20 فبراير 2026</p>
+                                <h3 class="blog-title">كيف تبني شبكة علاقات مهنية</h3>
+                                <p class="blog-excerpt">
+                                    بناء شبكة علاقات مهنية قوية يمكن أن يفتح لك فرصاً لا حصر لها. 
+                                    تعلم أفضل الطرق لبناء هذه الشبكة.
+                                </p>
+                                <button class="btn-read-more">Learn more  </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section> -->
+    
+
+
+
+
+
+
+
+        <!-- صفحة اللجان (Committees) -->
+        <!-- <section id="committees" class="page-section">
+            <section class="page-hero">
+                <h1>Committees</h1>
+                <p> Learn about the committees of the IEEE branch in Damietta</p>
+            </section>
+            
+            <section class="section">
+                <div class="container">
+                    <div class="committees-grid">
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-bullhorn"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة العلاقات العامة</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن التواصل مع الطلاب والشركات الخارجية 
+                                ونشر أخبار الفرع على منصات التواصل الاجتماعي.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="committee-title">اللجنة التقنية</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن تنظيم الورش التقنية والمسابقات 
+                                وتقديم الدعم الفني للأنشطة المختلفة.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة التعليم</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن تنظيم الدورات التعليمية والندوات 
+                                وتوفير المواد التعليمية للطلاب.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة الشراكات</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن بناء علاقات مع الشركات 
+                                والجامعات الأخرى للحصول على فرص تدريب ودعم.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة المسابقات</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن تنظيم المسابقات الداخلية 
+                                وإعداد الفرق للمسابقات الخارجية.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة العضوية</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن تسجيل الأعضاء الجدد 
+                                ومتابعة نشاط الأعضاء الحاليين.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-briefcase"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة التوظيف</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن توفير فرص تدريب ووظائف 
+                                للطلاب من خلال شركاء الفرع.
+                            </p>
+                        </div>
+                        
+                        <div class="committee-card">
+                            <div class="committee-icon">
+                                <i class="fas fa-palette"></i>
+                            </div>
+                            <h3 class="committee-title">لجنة التصميم</h3>
+                            <p class="committee-desc">
+                                مسؤولة عن تصميم المواد الإعلانية 
+                                والهوية البصرية للأنشطة المختلفة.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    
+         صفحة الفروع (Chapters) --> 
+        <!-- <section id="chapters" class="page-section">
+            <section class="page-hero">
+                <h1>Branches
+                </h1>
+                <p>Learn about IEEE branches in Egypt and worldwide</p>
+            </section>
+            
+            <section class="section">
+                <div class="container">
+                    <div class="chapters-container">
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Damietta Student Branch</h3>
+                                <p>جامعة دمياط - مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Mansoura Student Branch</h3>
+                                <p>جامعة المنصورة - مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Cairo Student Branch</h3>
+                                <p>جامعة القاهرة - مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Alexandria Student Branch</h3>
+                                <p>جامعة الإسكندرية - مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Ain Shams Student Branch</h3>
+                                <p>جامعة عين شمس - مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-university"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE horus University</h3>
+                                <p>جامعة حورس - مصر</p>
+                            </div>
+                        </div>
+                        
+                        <div class="chapter-item">
+                            <div class="chapter-logo">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="chapter-info">
+                                <h3>IEEE Global</h3>
+                                <p>المقر العالمي - IEEE.org</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section> -->
+
+<!-- صفحة الأسئلة الشائعة (FAQ) -->
+<section id="faq" class="page-section">
+    <section class="page-hero">
+        <h1>Frequently asked questions </h1>
+        <p> Answers to the most frequently asked questions</p>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>ما هو IEEE؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>IEEE هي أكبر منظمة مهنية تقنية في العالم، وتضم أكثر من 420,000 عضو في أكثر من 160 دولة. تهدف إلى تطوير التكنولوجيا لصالح البشرية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>كيف يمكنني الانضمام إلى فرع IEEE دمياط؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يمكنك الانضمام عن طريق الضغط على زر "انضم الآن" في القائمة العلوية أو في الصفحة الرئيسية، ثم ملء نموذج التسجيل. العضوية مجانية للطلاب.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>هل العضوية مجانية؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، العضوية في فرع IEEE دمياط مجانية تماماً للطلاب. نحن نوفر ورش عمل مجانية، شهادات معتمدة، وفرص تدريب.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>ما هي مميزات العضوية؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>مميزات العضوية تشمل: ورش عمل مجانية، شهادات معتمدة من IEEE، فرص تدريب في شركات كبرى، المشاركة في المسابقات، وبناء شبكة علاقات مهنية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>هل يمكنني المشاركة في الفعاليات بدون عضوية؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، يمكنك المشاركة في معظم الفعاليات بدون عضوية، لكن الأعضاء يحصلون على أولوية في التسجيل ومزايا إضافية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>ما هي متطلبات العضوية؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>المتطلبات هي أن تكون طالباً في إحدى كليات الهندسة في جامعة دمياط، وأن تملأ نموذج التسجيل. لا توجد متطلبات إضافية.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>كيف يمكنني التواصل مع الفرع؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>يمكنك التواصل معنا عبر صفحاتنا على وسائل التواصل الاجتماعي الموضحة في الفوتر، أو عبر البريد الإلكتروني الرسمي للفرع.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <span>هل توجد ورش عمل أسبوعية؟</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>نعم، نوفر ورش عمل دورية في مختلف المجالات التقنية مثل البرمجة، الروبوتات، الذكاء الاصطناعي، وغيرها. تابعنا على وسائل التواصل لمعرفة المواعيد.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+
+<!-- صفحة الانضمام -->
+<section id="join" class="page-section">
+    <section class="page-hero">
+        <h1> Join us </h1>
+        <p>Be part of the largest student tech community</p>
+    </section>
+    
+    <section class="section">
+        <div class="container">
+            <div class="join-grid">
+                <div class="join-info">
+                    <h2>مميزات العضوية</h2>
+                    <ul class="benefits">
+                        <li><i class="fas fa-certificate"></i><div><strong>شهادة معتمدة</strong><p>من IEEE العالمية</p></div></li>
+                        <li><i class="fas fa-laptop-code"></i><div><strong>ورش مجانية</strong><p>جميع الورش مجانية</p></div></li>
+                        <li><i class="fas fa-trophy"></i><div><strong>المسابقات</strong><p>شارك واربح</p></div></li>
+                        <li><i class="fas fa-network-wired"></i><div><strong>شبكة علاقات</strong><p>تواصل مع مهندسين</p></div></li>
+                        <li><i class="fas fa-briefcase"></i><div><strong>فرص تدريب</strong><p>في شركات رائدة</p></div></li>
+                    </ul>
+
+
+
+
+
+
+
+                </div>
+                <div class="join-form">
+                    <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLScKF6I45eSUp0AUsOUyNF1qZccSRt1lw5S61VErlPVeZPm6LQ/viewform?usp=header" 
+                    width="100%" 
+                    height="800" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0">
+                    جاري التحميل…
+                </iframe>
+                    <h3>نموذج التسجيل</h3>
+                    <!-- <form onsubmit="submitForm(event)">
+                        <input type="text" placeholder="الاسم الكامل" required>
+                        <input type="email" placeholder="البريد الإلكتروني" required>
+                        <input type="tel" placeholder="رقم الهاتف" required>
+                        <input type="text" placeholder="الجامعة" required>
+                        <select required>
+                            <option value="">اختر الكلية</option>
+                            <option>هندسة حاسبات</option>
+                            <option>هندسة كهربائية</option>
+                            <option>هندسة ميكانيكية</option>
+                            <option>هندسة مدنية</option>
+                        </select>
+                        <select required>
+                            <option value="">السنة الدراسية</option>
+                            <option>فرقة أولى</option>
+                            <option>فرقة ثانية</option>
+                            <option>فرقة ثالثة</option>
+                            <option>فرقة رابعة</option>
+                        </select> -->
+                        <!-- <button type="submit">إرسال الطلب</button> -->
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section> 
+</section>
+
+
+<!-- الفوتر -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+            <!-- Location على الشمال -->
+            <div class="footer-location">
+                <h3>Location</h3>
+                <p>جامعة دمياط - مصر</p>
+                <p>دمياط، مصر</p>
+            </div>
+            
+            <!-- Social Links في الوسط -->
+            <div class="social-links">
+                <a href="https://www.facebook.com/share/1E1xosorsF/?mibextid=wwXIfr"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/ieee_dsb?igsh=MThhZXk1amY1MTNudg=="><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/company/ieee-dsb/"><i class="fab fa-linkedin"></i></a>
+                <a href="https://www.tiktok.com/@ieee_damietta?_r=1&_t=ZS-94Pl7jB3MQu"><i class="fab fa-tiktok"></i></a>
+            </div>
+            
+            <!-- Contact Us على اليمين -->
+            <div class="footer-contact">
+                <h3>Contact Us</h3>
+                <p>Email : ieeedsb0@gmail.com</p>
+                <p>Phone: +20 101 681 8073</p>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>© 2022-2026 IEEE Damietta Student Branch</p>
+        </div>
+    </div>
+</footer>
+
+
+
+
+<!-- AI Chatbot -->
+<div class="chatbot-container">
+    <div class="chatbot-toggle" onclick="toggleChatbot()">
+        <i class="fas fa-comments"></i>
+    </div>
+    
+    <div class="chatbot-window" id="chatbotWindow">
+        <div class="chatbot-header">
+            <h3>🤖 IEEE Assistant</h3>
+            <button class="chatbot-close" onclick="toggleChatbot()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        
+        <div class="chatbot-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-content">
+                    مرحباً! 👋 أنا مساعد IEEE دمياط<br>
+                    كيف يمكنني مساعدتك اليوم؟
+                </div>
+            </div>
+        </div>
+        
+        <div class="chatbot-input">
+            <input type="text" id="chatInput" placeholder="اكتب رسالتك هنا..." onkeypress="handleKeyPress(event)">
+            <button class="chatbot-send" onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="blobs">
+    <div class="blob-1"></div>
+    <div class="blob-2"></div>
+</div>
+
+
+<div class="ieee-bg-text">IEEE</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+    function showPage(pageId) {
+        var pages = document.querySelectorAll('.page-section');
+        for (var i = 0; i < pages.length; i++) {
+            pages[i].classList.remove('active');
+        }
+        
+        var links = document.querySelectorAll('.nav-link');
+        for (var i = 0; i < links.length; i++) {
+            links[i].classList.remove('active');
+        }
+        
+        var targetPage = document.getElementById(pageId);
+        if (targetPage) {
+            targetPage.classList.add('active');
+        }
+        
+        var activeLink = document.querySelector('[data-page="' + pageId + '"]');
+        if (activeLink) {
+            activeLink.classList.add('active');
+        }
+        
+        window.scrollTo(0, 0);
+        document.getElementById('nav-menu').classList.remove('active');
+    }
+
+    var navLinks = document.querySelectorAll('.nav-link');
+    for (var i = 0; i < navLinks.length; i++) {
+        navLinks[i].addEventListener('click', function() {
+            var pageId = this.getAttribute('data-page');
+            showPage(pageId);
+        });
+    }
+
+    function toggleMenu() {
+        document.getElementById('nav-menu').classList.toggle('active');
+    }
+
+    function submitForm(event) {
+        event.preventDefault();
+        alert('✅ تم إرسال طلبك بنجاح! سنتواصل معك قريباً');
+        event.target.reset();
+    }
+
+
+
+
+ 
+
+
+
+    // Intro Animation Script
+document.addEventListener('DOMContentLoaded', function() {
+    const typingText = document.getElementById('typing-text');
+    const textToType = "  Welcome To IEEE Damietta Student Branch";
+    let index = 0;
+    
+    // Typing Effect
+    function typeWriter() {
+        if (index < textToType.length) {
+            typingText.innerHTML += textToType.charAt(index);
+            index++;
+            setTimeout(typeWriter, 100); // سرعة الكتابة
+        } else {
+            // بعد انتهاء الكتابة، انتظر 3 ثواني ثم أغلق الـ Intro
+            setTimeout(() => {
+                closeIntro();
+            }, 1000);
+        }
+    }
+    
+    // Start typing after a short delay
+    setTimeout(typeWriter, 500);
+});
+
+// Function to close intro
+function closeIntro() {
+    const introOverlay = document.getElementById('introOverlay');
+    introOverlay.classList.add('hidden');
+    
+    // Remove from DOM after animation
+    setTimeout(() => {
+        introOverlay.style.display = 'none';
+    }, 500);
+}
+
+
+
+// Typing Effect for Home Page
+function typeWriterText(elementId, text, speed, delay) {
+    const element = document.getElementById(elementId);
+    if (!element) return;
+    
+    let index = 0;
+    element.innerHTML = '';
+    element.classList.add('typing-cursor');
+    
+    setTimeout(() => {
+        function type() {
+            if (index < text.length) {
+                element.innerHTML += text.charAt(index);
+                index++;
+                setTimeout(type, speed);
+            } else {
+                element.classList.remove('typing-cursor');
+                element.classList.add('active');
+            }
+        }
+        type();
+    }, delay);
+}
+
+// Call this function after intro closes
+function startHomeTyping() {
+    // Title
+    typeWriterText('home-title', 'Welcome to IEEE Damietta Branch', 1, 500);
+    
+    // Description
+    typeWriterText('home-description', 'We offer the best educational and technical opportunities for engineering students.', 1, 500);
+    
+    // About Title
+    typeWriterText('about-title', 'About us', 2, 500);
+    
+    // About Text
+    typeWriterText('about-text', 'The IEEE student branch at Damietta University is a student organization that aims to develop the technical and leadership skills of engineering students.', 2, 500);
+}
+
+
+
+
+// Modify the closeIntro function to start home typing
+function closeIntro() {
+    const introOverlay = document.getElementById('introOverlay');
+    introOverlay.classList.add('hidden');
+    
+    // Remove from DOM after animation
+    setTimeout(() => {
+        introOverlay.style.display = 'none';
+        // Start home typing after intro closes
+        startHomeTyping();
+    }, 500);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // FAQ Accordion Functionality
+    document.querySelectorAll('.faq-question').forEach(function(question) {
+        question.addEventListener('click', function() {
+            var faqItem = this.parentElement;
+            var isActive = faqItem.classList.contains('active');
+            
+            // Close all other items
+            document.querySelectorAll('.faq-item').forEach(function(item) {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+
+
+
+
+
+    
+// استبدل كل الـ Contact Modal functions دي في آخر الصفحة
+function openContactModal(name, role, socialData) {
+    const modal = document.getElementById('contactModal');
+    document.getElementById('modal-name').textContent = name;
+    document.getElementById('modal-role').textContent = role;
+    
+    // Update social links
+    if (socialData) {
+        const social = JSON.parse(socialData);
+        const fbLink = document.querySelector('.modal-link.facebook');
+        const igLink = document.querySelector('.modal-link.instagram');
+        const liLink = document.querySelector('.modal-link.linkedin');
+        
+        fbLink.href = social.facebook || '#';
+        igLink.href = social.instagram || '#';
+        liLink.href = social.linkedin || '#';
+    }
+    
+    modal.classList.add('active');
+    document.body.style.overflow = 'hidden'; // منع الـ scroll
+}
+
+function closeContactModal() {
+    const modal = document.getElementById('contactModal');
+    modal.classList.remove('active');
+    document.body.style.overflow = 'auto'; // رجع الـ scroll
+}
+
+// Close modal methods
+document.getElementById('contactModal').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeContactModal();
+    }
+});
+
+// Close with Escape key
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        closeContactModal();
+    }
+});
+
+
+
+
+
+
+// ==================== AI CHATBOT ====================
+// Chatbot Functions
+let isTyping = false;
+
+function toggleChatbot() {
+    const window = document.getElementById('chatbotWindow');
+    window.classList.toggle('active');
+}
+
+function addMessage(content, isUser = false) {
+    const messages = document.getElementById('chatMessages');
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${isUser ? 'user' : 'bot'}`;
+    messageDiv.innerHTML = `<div class="message-content">${content}</div>`;
+    messages.appendChild(messageDiv);
+    messages.scrollTop = messages.scrollHeight;
+}
+
+function sendMessage() {
+    const input = document.getElementById('chatInput');
+    const message = input.value.trim();
+    
+    if (!message || isTyping) return;
+    
+    // User message
+    addMessage(message, true);
+    input.value = '';
+    
+    // Bot typing
+    isTyping = true;
+    const sendBtn = document.querySelector('.chatbot-send');
+    sendBtn.disabled = true;
+    
+    setTimeout(() => {
+        const responses = getBotResponse(message);
+        addMessage(responses);
+        isTyping = false;
+        sendBtn.disabled = false;
+        input.focus();
+    }, 1000 + Math.random() * 1000);
+}
+
+function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        sendMessage();
+    }
+}
+function getBotResponse(message) {
+    const lowerMessage = message.toLowerCase().trim();
+    const arMessage = message.replace(/[^\u0600-\u06FF\u0020-\u007F]/g, '').toLowerCase().trim();
+    
+    // ==================== ردود متقدمة ====================
+    
+    // 1. الترحيب والتعريف
+    if (lowerMessage.includes('مرحبا') || lowerMessage.includes('اهلا') || lowerMessage.includes('هاي') || lowerMessage.includes('ازيك') ||
+        lowerMessage.includes('hello') || lowerMessage.includes('hi') || lowerMessage.includes('hey')) {
+        const welcomes = [
+            '🌟 أهلا وسهلاً بيك في IEEE دمياط! أنا مساعدك الذكي 🤖<br>قولي عايز مساعدة في إيه؟',
+            '👋 مرحباً يا بطل! IEEE دمياط جاهز يساعدك 😎<br>اسألني عن الاشتراك ، كورس، الفريق...',
+            '🎉 أهلاً بيك! أحسن فرع طلابي في مصر هنا! 💪<br>إيه السؤال بتاعك؟'
+        ];
+        return welcomes[Math.floor(Math.random() * welcomes.length)];
+    }
+    
+    // 2. العضوية والتسجيل (الأهم)
+    if (lowerMessage.includes('فورم') ||lowerMessage.includes('الفورم')|| lowerMessage.includes('انضم') || lowerMessage.includes('تسجيل') || lowerMessage.includes('اسجل') ||lowerMessage.includes('التسجيل') ||
+        lowerMessage.includes('join') || lowerMessage.includes('membership') || lowerMessage.includes('اشتراك') || lowerMessage.includes(' اشترك')|| lowerMessage.includes(' بشترك')) {
+        return `🎯 <strong>العضوية مجانية تماماً!</strong> 💸 Zero Cost<br><br>
+                📋 <strong>الخطوات (دقيقتين بس):</strong><br>
+                ✅ 1️⃣ اضغط <strong>"Join Now"</strong> من القائمة<br>
+                ✅ 2️⃣ املأ البيانات (اسم - تليفون - كلية)<br>
+                ✅ 3️⃣ استلم شهادتك فوراً<br><br>
+                🏆 <strong>هتحصل على:</strong><br>
+                - شهادة IEEE معتمدة عالمياً<br>
+                - ورش عمل مجانية (Arduino, Python, AI)<br>
+                - فرص تدريب في شركات كبرى<br>
+                - شبكة علاقات قوية<br><br>
+                👆 <strong>اضغط Join Now دلوقتي!</strong>`;
+    }
+    
+    // 3. الفريق التنفيذي (محدث)
+    if (lowerMessage.includes('الفريق') || lowerMessage.includes('رئيس') || lowerMessage.includes('team') ||  lowerMessage.includes('اتواصل') || 
+        lowerMessage.includes('chairman') || lowerMessage.includes('adham') || lowerMessage.includes(' ادهم') ||
+        lowerMessage.includes('روان') || lowerMessage.includes('بسمله') || lowerMessage.includes('عمر') ||
+        lowerMessage.includes('يوسف') || lowerMessage.includes('ندي') || lowerMessage.includes('احمد')) {
+        return `👥 <strong>الفريق التنفيذي 2025-2026:</strong><br><br>
+                👑 <strong>أدهم النفاراوي</strong> - الرئيس (Chairman)<br>
+                ⚙️ <strong>رووان رشاد</strong> - نائب تقني<br>
+                💼 <strong>بسمله الخواجة</strong> - نائب غير تقني<br>
+                📋 <strong>عمر زكي</strong> - الأمين العام<br>
+                💰 <strong>يوسف عبد العظيم</strong> - خازن أول<br>
+                💰 <strong>ندي الحسيني</strong> - خازن ثاني<br>
+                🌐 <strong>أحمد الديب</strong> - ويبماستر<br><br>
+                📲 <strong>اضغط Contact Me</strong> تحت صورهم في About Us!`;
+    }
+    
+    // 4. الفعاليات والورش
+    if (lowerMessage.includes('فعاليات') || lowerMessage.includes('ورش') || lowerMessage.includes('events') || lowerMessage.includes('الكورس')|| 
+        lowerMessage.includes('حفلة') || lowerMessage.includes('مسابقة') || lowerMessage.includes('كورسات') || lowerMessage.includes('كورس')) {
+        return `📅 <strong>الفعاليات القادمة (كلهم مجاناً للأعضاء):</strong><br><br>
+                🔥 <strong>ورشة Arduino</strong> - قريب جداً<br>
+                🐍 <strong>كورس Python</strong> - من الصفر للاحتراف<br>
+                🤖 <strong>ذكاء اصطناعي</strong> - AI Basics<br>
+                💻 <strong>Web Development</strong> - HTML/CSS/JS<br>
+                🏆 <strong>مسابقات برمجة</strong> - جوايز نقدية<br><br>
+                📲 تابع الـ Facebook عشان التواريخ الدقيقة!`;
+    }
+    
+    // 5. اللجان
+    if (lowerMessage.includes('اللجنة') || lowerMessage.includes('لجان') || lowerMessage.includes('committees')) {
+        return `🏢 <strong>لجان IEEE دمياط (8 لجان):</strong><br><br>
+                📢 <strong>العلاقات العامة</strong> - السوشيال ميديا<br>
+                💻 <strong>التقنية</strong> - الورش والأجهزة<br>
+                📚 <strong>التعليم</strong> - الكورسات والمحاضرات<br>
+                🤝 <strong>الشراكات</strong> - الشركات والتدريب<br>
+                🏆 <strong>المسابقات</strong> - البطولات<br>
+                👥 <strong>العضوية</strong> - تسجيل الأعضاء<br>
+                💼 <strong>التوظيف</strong> - فرص شغل<br>
+                🎨 <strong>التصميم</strong> - البوسترات<br><br>
+                👆 شوف التفاصيل في صفحة <strong>Committees</strong>`;
+    }
+    
+    // 6. التواصل
+    if (lowerMessage.includes('اتصل') || lowerMessage.includes('رقم') || lowerMessage.includes('تليفون')  ||  lowerMessage.includes('اتواصل ازاي') || 
+        lowerMessage.includes('ايميل') || lowerMessage.includes('واتس') || lowerMessage.includes('contact')) {
+        return `📞 <strong>بيانات التواصل الرسمية:</strong><br><br>
+                📧 <strong>eldeeb.9@example.com</strong><br>
+                📱 <strong>+20 109 345 9909</strong><br><br>
+                🌐 <strong>Facebook/Instagram:</strong> في الفوتر تحت<br>
+                💬 <strong>أو كمل معايا هنا!</strong>`;
+    }
+    
+    // // 7. ERP
+    // if (lowerMessage.includes('erp') || lowerMessage.includes('نظام') || lowerMessage.includes('لوحة')) {
+    //     return `💻 <strong>الـ ERP System:</strong><br><br>
+    //             🔗 <strong>https://erp-code-express.lovable.app</strong><br><br>
+    //             👆 اضغط <strong>ERP</strong> من القائمة<br>
+    //             هيفتحلك النظام كامل!`;
+    // }
+    
+    // 8. الأقسام
+    if (lowerMessage.includes('هوم') || lowerMessage.includes('الرئيسية')) return 'الصفحة الرئيسية <strong>Home</strong> في الأول يا معلم! 👆';
+    if (lowerMessage.includes('عن') || lowerMessage.includes('about')) return 'صفحة <strong>About Us</strong> - هتلاقي الفريق كله هناك! 😊';
+    if (lowerMessage.includes('مدونة') || lowerMessage.includes('مقالات')) return 'الـ <strong>Blogs</strong> مليان مقالات تقنية مفيدة جداً! 📚';
+    if (lowerMessage.includes('لجان') || lowerMessage.includes('committees')) return 'صفحة <strong>Committees</strong> - كل اللجان والمهام! 🏢';
+    
+    // 9. أسئلة شائعة
+    if (lowerMessage.includes('سؤال') || lowerMessage.includes('يسأل') || lowerMessage.includes('faq')) {
+        return `❓ <strong>أشهر الأسئلة:</strong><br><br>
+                💰 العضوية مجانية؟ <strong>أيوه 100%!</strong><br>
+                ⏱️ كام دقيقة التسجيل؟ <strong>دقيقتين</strong><br>
+                📜 الشهادة معتمدة؟ <strong>IEEE عالمياً</strong><br>
+                👶 متطلبات؟ <strong>طالب هندسة بس</strong><br><br>
+                👆 صفحة <strong>FAQ</strong> لكل التفاصيل!`;
+    }
+    
+    // 10. ردود عامية ذكية
+    const smartReplies = [
+        // `💡 <strong>نصيحة مني ليك:</strong><br>انضم للفرع وهتغير حياتك المهنية! 🎓`,
+        `🤔 لو عايز حاجة معينة من دول عشان اقدر اساعدك فيهم؟ قول:<br>
+        • "اشتراك" 
+        • "الفريق" 
+        •"انضم" 
+        •"team"  
+        •"كورسات" 
+        • "الفورم"
+        •"اتصل"`
+        ,
+        // `🚀 IEEE دمياط = <strong>البوابة لسوق العمل</strong><br>شهادات + خبرة + علاقات`,
+        // `📚 عايز تتعلم برمجة؟<br>عندنا Python | Arduino | AI <strong>كله مجاناً!</strong>`,
+        // `🏆 شارك في مسابقاتنا واربح جوايز + CV قوي للسيرة`,
+        // `أنا 24/7 جاهز! 😎 أي سؤال تاني؟`
+    ];
+    
+    return smartReplies[Math.floor(Math.random() * smartReplies.length)];
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// حدد تاريخ الإيفينت هنا (سنة، شهر-1، يوم، ساعة، دقيقة)
+const eventDate = new Date("March 30, 2024 18:00:00").getTime();
+
+const countdownTask = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = eventDate - now;
+
+    // حسابات الوقت
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    // عرض النتائج في الصفحة
+    document.getElementById("days").innerHTML = days;
+    document.getElementById("hours").innerHTML = hours;
+    document.getElementById("minutes").innerHTML = minutes;
+    document.getElementById("seconds").innerHTML = seconds;
+
+    // لو الوقت خلص
+    if (distance < 0) {
+        clearInterval(countdownTask);
+        document.getElementById("event-countdown").innerHTML = "<h3>الإيفينت بدأ الآن! 🔥</h3>";
+    }
+}, 1000);
+
+
+
+
+
+
+
+
+window.addEventListener('scroll', function() {
+    const bgText = document.querySelector('.ieee-bg-text');
+    let scrollValue = window.scrollY;
+    // الكلمة هتتحرك ببطء شديد مع السكرول
+    bgText.style.transform = `translate(-50%, calc(-50% + ${scrollValue * 0.1}px))`;
+});
+
+
+
+
+
+document.querySelector('.btn-portal').addEventListener('click', function(e) {
+    // ممكن تضيف هنا أي أنيميشن خفيف قبل الانتقال لو حابب
+    console.log("Navigating to IEEE Portal...");
+});
+
+
+
+
+
+</script>
+
+
+</body>
+</html>    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
