@@ -23,7 +23,7 @@ export function DropdownMenuDemo() {
         <button
           className={`hover:bg-[#0056b31a] hover:text-ieee-primary py-1.25 px-2.5 rounded-[5px] transition-colors flex items-center gap-1 outline-none`}
         >
-          <span>Chapters</span>
+          <span>Tracks</span>
           <ChevronDown className="size-4" />
         </button>
       </DropdownMenuTrigger>

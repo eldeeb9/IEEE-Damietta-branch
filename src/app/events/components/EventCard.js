@@ -38,7 +38,7 @@ const EventCard = ({
               alt="vision"
             />
             <span>
-              {formattedDate}{" "}
+              {formattedDate}
               <span className="text-blue-600">{formattedTime}</span>
             </span>
           </div>

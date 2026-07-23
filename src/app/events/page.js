@@ -52,7 +52,7 @@ const page = async () => {
         <div className="container">
           <EventsWrapper events={events}/>
 
-          <EventsPagination />
+          {/* <EventsPagination /> */}
         </div>
       </section>
       <Footer />

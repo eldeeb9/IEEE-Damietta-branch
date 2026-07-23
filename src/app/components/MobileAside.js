@@ -5,7 +5,8 @@ import { createPortal } from "react-dom";
 import Link from "next/link";
 import NavLink from "./NavLink";
 
-export default function MobileAside({user, open, onClose}) {
+export default function MobileAside({ user, open, onClose }) {
+  const [tracksOpen, setTracksOpen] = useState(false);
 
   useEffect(() => {
     function onKey(e) {
@@ -28,6 +29,10 @@ export default function MobileAside({user, open, onClose}) {
   useEffect(() => {
     setMounted(true);
   }, []);
+
+  useEffect(() => {
+    if (!open) setTracksOpen(false);
+  }, [open]);
 
   if (!mounted) return null;
 
@@ -141,12 +146,39 @@ export default function MobileAside({user, open, onClose}) {
                 style={{ transitionDelay: "260ms" }}
                 className={`transform transition duration-300 ${open ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}
               >
-                <NavLink
-                  name="Automation"
-                  route="/automation"
-                  asListItem={false}
-                  className="block w-full px-5 py-3"
-                />
+                <div className="overflow-hidden">
+                  <button
+                    type="button"
+                    aria-expanded={tracksOpen}
+                    onClick={() => setTracksOpen((prev) => !prev)}
+                    className="flex w-full items-center justify-between px-5 py-3 text-left text-white transition-colors duration-200"
+                  >
+                    <span className="font-medium">Tracks</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className={`h-4 w-4 transition-transform duration-300 ${tracksOpen ? "rotate-180" : "rotate-0"}`}
+                      viewBox="0 0 20 20"
+                      fill="currentColor"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.24 4.24a.75.75 0 01-1.06 0L5.21 8.29a.75.75 0 01.02-1.08z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
+
+                  <div
+                    className={`overflow-hidden transition-all duration-300 ease-out ${tracksOpen ? "max-h-16 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-1"}`}
+                  >
+                    <NavLink
+                      name="Automation"
+                      route="/automation"
+                      asListItem={false}
+                      className="block w-full px-5 py-3"
+                    />
+                  </div>
+                </div>
               </li>
             )}
           </ul>
