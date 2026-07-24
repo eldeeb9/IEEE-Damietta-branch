@@ -177,6 +177,12 @@ export default function MobileAside({ user, open, onClose }) {
                       asListItem={false}
                       className="block w-full px-5 py-3"
                     />
+                    <NavLink
+                      name="Microcontrollers"
+                      route="/ras"
+                      asListItem={false}
+                      className="block w-full px-5 py-3"
+                    />
                   </div>
                 </div>
               </li>
