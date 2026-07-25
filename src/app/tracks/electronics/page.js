@@ -140,7 +140,8 @@ const page = () => {
                         <div>
                           <p className="font-semibold">{support.name}</p>
                           <p className="text-sm text-slate-400">
-                            {support.title}
+                            {/* {support.title} */}
+                            Instructor
                           </p>
                         </div>
                       </div>
