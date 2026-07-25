@@ -35,13 +35,18 @@ function createParticle(side, width, height) {
   };
 }
 
-const CelebrationParticles = ({ duration = 4200 }) => {
+const CelebrationParticles = ({ active = false, duration = 4200 }) => {
   const canvasRef = useRef(null);
   const frameRef = useRef(null);
+  const startedRef = useRef(false);
 
   useEffect(() => {
+    if (!active || startedRef.current) return;
+
     const canvas = canvasRef.current;
     if (!canvas) return;
+
+    startedRef.current = true;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -125,7 +130,11 @@ const CelebrationParticles = ({ duration = 4200 }) => {
         cancelAnimationFrame(frameRef.current);
       }
     };
-  }, [duration]);
+  }, [active, duration]);
+
+  if (!active && !startedRef.current) {
+    return null;
+  }
 
   return (
     <canvas

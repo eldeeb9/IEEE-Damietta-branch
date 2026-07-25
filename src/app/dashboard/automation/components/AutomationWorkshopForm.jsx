@@ -85,7 +85,7 @@ const AutomationWorkshopForm = ({ dates }) => {
   };
 
   const checkSlotAvailable = (slot) => {
-    if (slot.automation_dates_reservations.length >= 2) {
+    if (slot.automation_dates_reservations.length >= 1) {
       return false;
     }
     return true;

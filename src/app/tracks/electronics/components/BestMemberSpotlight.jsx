@@ -1,19 +1,28 @@
 "use client";
 
+import { useRef } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { Sparkles, Trophy } from "lucide-react";
+import CelebrationParticles from "../../../components/CelebrationParticles";
 
 const traits = ["Commitment", "Teamwork", "Creativity"];
 
 const BestMemberSpotlight = ({ member }) => {
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { once: true, amount: 0.4 });
+
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 40, scale: 0.96 }}
-      animate={{ opacity: 1, y: 0, scale: 1 }}
-      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
-      className="relative xl:sticky xl:top-24"
-    >
+    <>
+      <CelebrationParticles active={isInView} />
+
+      <motion.div
+        ref={cardRef}
+        initial={{ opacity: 0, y: 40, scale: 0.96 }}
+        animate={isInView ? { opacity: 1, y: 0, scale: 1 } : { opacity: 0, y: 40, scale: 0.96 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        className="relative xl:sticky xl:top-24"
+      >
       <div className="pointer-events-none absolute -inset-4 rounded-[2.5rem] bg-linear-to-br from-amber-400/25 via-fuchsia-500/15 to-sky-400/25 blur-2xl" />
 
       <div className="relative overflow-hidden rounded-[2rem] border border-amber-300/30 bg-linear-to-br from-amber-500/10 via-slate-950/90 to-fuchsia-600/10 p-8 shadow-[0_0_60px_rgba(251,191,36,0.15)]">
@@ -104,7 +113,8 @@ const BestMemberSpotlight = ({ member }) => {
 
         <div className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-linear-to-t from-slate-950/80 to-transparent" />
       </div>
-    </motion.div>
+      </motion.div>
+    </>
   );
 };
 

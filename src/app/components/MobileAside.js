@@ -173,16 +173,16 @@ export default function MobileAside({ user, open, onClose }) {
                   >
                     <NavLink
                       name="Automation"
-                      route="/automation"
+                      route="/tracks/automation"
                       asListItem={false}
                       className="block w-full px-5 py-3"
                     />
-                    <NavLink
+                    {/* <NavLink
                       name="Microcontrollers"
                       route="/ras"
                       asListItem={false}
                       className="block w-full px-5 py-3"
-                    />
+                    /> */}
                   </div>
                 </div>
               </li>

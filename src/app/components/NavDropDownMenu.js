@@ -29,15 +29,15 @@ export function DropdownMenuDemo() {
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="start">
         <DropdownMenuItem>
-          <Link href="/automation" className="w-full">
+          <Link href="/tracks/automation" className="w-full">
             Automation
           </Link>
         </DropdownMenuItem>
-        <DropdownMenuItem>
-          <Link href="/ras" className="w-full">
+        {/* <DropdownMenuItem>
+          <Link href="/tracks/ras" className="w-full">
             Microcontrollers
           </Link>
-        </DropdownMenuItem>
+        </DropdownMenuItem> */}
       </DropdownMenuContent>
     </DropdownMenu>
   );

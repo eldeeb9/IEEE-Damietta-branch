@@ -1,48 +1,42 @@
 import React from "react";
 import Image from "next/image";
-import Nav from "../components/Nav";
-import Footer from "../components/Footer";
-import CelebrationParticles from "../components/CelebrationParticles";
+import Nav from "../../components/Nav";
+import Footer from "../../components/Footer";
 import BestMemberSpotlight from "./components/BestMemberSpotlight";
+
+const trackName = "RAS";
 
 const trackTeam = {
   viceHead: {
     name: "Eng. Omar Salama",
     title: "Vice Head | Instructor",
-    description:
-      "Responsible for leading the RAS track, organizing workshops, and guiding technical training within the branch.",
     photo: "/images/branch-members/salama.jpg",
   },
   instructor: {
     name: "Eng. Yahia Hagag",
-    title: "Instructor",
-    description:
-      "The instructor who supports RAS members with expertise in research and embedded systems.",
+    title: "Head | Instructor",
     photo: "/images/branch-members/yahia.jpg",
   },
   technicalSupport: [
     {
       name: "Ahmed Safwat",
       title: "Technical Support",
-      description: "Technical support for programming and engineering tools.",
+
       photo: "/images/branch-members/PHOTO-2026-06-24-20-06-03.jpg",
     },
     {
       name: "Rovana Mohamed",
       title: "Technical Support",
-      description: "Handling hardware and software issues for the track.",
       photo: "/images/branch-members/PHOTO-2026-07-24-16-39-42.jpg",
     },
     {
       name: "Rahma Sadoun",
       title: "Technical Support",
-      description: "Handling hardware and software issues for the track.",
       photo: "/images/branch-members/PHOTO-2026-07-24-16-40-00.jpg",
     },
     {
       name: "Dalia",
       title: "Technical Support",
-      description: "Handling hardware and software issues for the track.",
       photo: "/images/branch-members/PHOTO-2026-07-24-17-58-27.jpg",
     },
   ],
@@ -50,7 +44,7 @@ const trackTeam = {
     name: "Ahmed Safwat",
     title: "Best Member",
     description:
-      "The standout member of the RAS track this season, excelling in execution, collaboration, and creativity.",
+      `The standout member of the ${trackName} track this season, excelling in execution, collaboration, and creativity.`,
     photo: "/images/branch-members/PHOTO-2026-06-24-20-40-03.jpg",
   },
 };
@@ -59,7 +53,6 @@ const page = () => {
   return (
     <div className="min-h-screen bg-slate-950 text-white">
       <Nav />
-      <CelebrationParticles />
 
       <main className="relative overflow-hidden">
         <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 overflow-hidden">
@@ -71,17 +64,14 @@ const page = () => {
         <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
           <div className="relative mb-12 space-y-4 text-center">
             <div className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-px bg-linear-to-r from-transparent via-amber-300/40 to-transparent" />
-            <p className="text-sm uppercase tracking-[0.32em] text-amber-200/90">
-              RAS Track Celebration
-            </p>
             <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
               <span className="bg-linear-to-r from-amber-200 via-white to-sky-200 bg-clip-text text-transparent">
-                Meet the RAS Track Team
+                Meet the {trackName} Track Team
               </span>
             </h1>
             <p className="mx-auto max-w-2xl text-slate-300 sm:text-lg">
               Discover the leadership, instructor, and technical support behind
-              the RAS track — crowned by our celebratory best member highlight.
+              the {trackName} track — crowned by our celebratory best member highlight.
             </p>
           </div>
 
@@ -92,30 +82,6 @@ const page = () => {
                   Vice Head & Instructor
                 </h2>
                 <div className="grid gap-6 lg:grid-cols-2">
-                  <div className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-6 shadow-lg">
-                    <div className="flex flex-col items-center gap-5 text-center">
-                      <div className="relative h-44 w-44 overflow-hidden rounded-full border-4 border-cyan-500/30 bg-slate-800">
-                        <Image
-                          src={trackTeam.viceHead.photo}
-                          alt={trackTeam.viceHead.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-lg font-semibold">
-                          {trackTeam.viceHead.name}
-                        </p>
-                        <p className="text-sm text-slate-400">
-                          {trackTeam.viceHead.title}
-                        </p>
-                      </div>
-                      <p className="text-sm leading-6 text-slate-300">
-                        {trackTeam.viceHead.description}
-                      </p>
-                    </div>
-                  </div>
-
                   <div className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-6 shadow-lg">
                     <div className="flex flex-col items-center gap-5 text-center">
                       <div className="relative h-44 w-44 overflow-hidden rounded-full border-4 border-amber-400/30 bg-slate-800">
@@ -134,9 +100,26 @@ const page = () => {
                           {trackTeam.instructor.title}
                         </p>
                       </div>
-                      <p className="text-sm leading-6 text-slate-300">
-                        {trackTeam.instructor.description}
-                      </p>
+                    </div>
+                  </div>
+                  <div className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-6 shadow-lg">
+                    <div className="flex flex-col items-center gap-5 text-center">
+                      <div className="relative h-44 w-44 overflow-hidden rounded-full border-4 border-cyan-500/30 bg-slate-800">
+                        <Image
+                          src={trackTeam.viceHead.photo}
+                          alt={trackTeam.viceHead.name}
+                          fill
+                          className="object-cover"
+                        />
+                      </div>
+                      <div>
+                        <p className="text-lg font-semibold">
+                          {trackTeam.viceHead.name}
+                        </p>
+                        <p className="text-sm text-slate-400">
+                          {trackTeam.viceHead.title}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -178,9 +161,6 @@ const page = () => {
                           </p>
                         </div>
                       </div>
-                      <p className="mt-4 text-sm leading-6 text-slate-300">
-                        {support.description}
-                      </p>
                     </div>
                   ))}
                 </div>

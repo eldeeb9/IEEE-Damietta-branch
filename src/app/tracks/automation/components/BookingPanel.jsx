@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import { supabase } from "@/app/utils/supabase/client";
 
 const days = [
@@ -13,74 +14,149 @@ const days = [
   "Saturday",
 ];
 
-const BookingPanel = ({ dates, user }) => {
-  const [selectedSlotId, setSelectedSlotId] = useState({});
-  const [reserved, setIsReserved] = useState(null);
+function formatSlot(slot) {
+  const slotDate = new Date(slot.date);
 
-  console.log(dates);
+  return {
+    id: slot.id,
+    date: slotDate.toLocaleDateString(),
+    day: days[slotDate.getDay()],
+    hour: slotDate.toLocaleTimeString("en-US", {
+      hour: "2-digit",
+      minute: "2-digit",
+      hour12: true,
+    }),
+  };
+}
+
+const BookingPanel = ({ dates = [], user }) => {
+  const router = useRouter();
+  const [selectedSlotId, setSelectedSlotId] = useState({});
+  const [reserved, setIsReserved] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const filteredDates = dates.filter(
-    (date) => date.automation_dates_reservations.length < 1,
+    (date) => (date.automation_dates_reservations ?? []).length < 1,
   );
 
   useEffect(() => {
-    const userReservation = dates.forEach((date) => {
-      date.automation_dates_reservations.forEach((usr) => {
-        if (usr.user_id == user.id) {
-          setSelectedSlotId({
-            id: date.id,
-            date: new Date(date.date).toLocaleDateString(),
-            day: days[new Date(date.date).getDay()],
-            hour: new Date(date.date).toLocaleTimeString("en-US", {
-              hour: "2-digit",
-              minute: "2-digit",
-              hour12: true,
-            }),
-          });
-          setIsReserved(true);
-        }
-      });
-    });
-  }, []);
+    if (!user?.id) {
+      setIsReserved(false);
+      return;
+    }
+
+    for (const date of dates) {
+      const userReservation = (date.automation_dates_reservations ?? []).find(
+        (reservation) => reservation.user_id === user.id,
+      );
+
+      if (userReservation) {
+        setSelectedSlotId(formatSlot(date));
+        setIsReserved(true);
+        return;
+      }
+    }
+
+    setIsReserved(false);
+  }, [dates, user?.id]);
 
   const onConfirm = async (id) => {
-    if (!selectedSlotId.id) return;
+    if (!selectedSlotId.id || !user?.id || isSubmitting) return;
+
+    setIsSubmitting(true);
 
     try {
+      const { data: existingReservation, error: existingError } = await supabase
+        .from("automation_dates_reservations")
+        .select("id")
+        .eq("user_id", user.id)
+        .maybeSingle();
+
+      if (existingError) {
+        alert("لم يتم حجز الموعد. حاول مرة أخرى.");
+        return;
+      }
+
+      if (existingReservation) {
+        alert("لديك حجز بالفعل!");
+        setIsReserved(true);
+        router.refresh();
+        return;
+      }
+
       const { data: availableData, error: availableError } = await supabase
         .from("automation_dates")
         .select(
           `
-    id,
-    automation_dates_reservations(user_id)
-  `,
+          id,
+          automation_dates_reservations(user_id)
+        `,
         )
-        .eq("id", id);
+        .eq("id", id)
+        .maybeSingle();
 
-      if (availableData[0].automation_dates_reservations.length >= 1) {
-        alert("هذا المعاد ممتلئ بالفعل!");
+      if (availableError || !availableData) {
+        alert("لم يتم حجز الموعد. حاول مرة أخرى.");
         return;
       }
 
-      const { data, error } = await supabase
+      if ((availableData.automation_dates_reservations ?? []).length >= 1) {
+        alert("هذا المعاد ممتلئ بالفعل!");
+        router.refresh();
+        return;
+      }
+
+      const { error } = await supabase
         .from("automation_dates_reservations")
         .insert({
           date_id: selectedSlotId.id,
           user_id: user.id,
         });
-      if (!error) setIsReserved(true);
-    } catch (error) {
-      alert("لم يتم حجز الموعد جرب معاد اخر.");
+
+      if (error) {
+        if (error.code === "23505") {
+          alert("هذا المعاد ممتلئ بالفعل!");
+        } else if (error.code === "23503") {
+          alert("يرجى إكمال التسجيل قبل الحجز.");
+        } else {
+          alert("لم يتم حجز الموعد. جرب معادًا آخر.");
+        }
+        router.refresh();
+        return;
+      }
+
+      setIsReserved(true);
+      router.refresh();
+    } catch {
+      alert("لم يتم حجز الموعد. جرب معادًا آخر.");
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
   const onCancel = async (id) => {
-    if (!selectedSlotId) return;
-    const { data, error } = await supabase
-      .from("automation_dates_reservations")
-      .delete()
-      .eq("date_id", id);
-    if (!error) setIsReserved(false);
+    if (!selectedSlotId.id || !user?.id || isSubmitting) return;
+
+    setIsSubmitting(true);
+
+    try {
+      const { error } = await supabase
+        .from("automation_dates_reservations")
+        .delete()
+        .eq("date_id", id)
+        .eq("user_id", user.id);
+
+      if (error) {
+        alert("لم يتم إلغاء الحجز. حاول مرة أخرى.");
+        return;
+      }
+
+      setIsReserved(false);
+      setSelectedSlotId({});
+      router.refresh();
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -120,18 +196,7 @@ const BookingPanel = ({ dates, user }) => {
                 <button
                   key={slot.id}
                   type="button"
-                  onClick={() => {
-                    setSelectedSlotId({
-                      id: slot.id,
-                      date: new Date(slot.date).toLocaleDateString(),
-                      day: days[new Date(slot.date).getDay()],
-                      hour: new Date(slot.date).toLocaleTimeString("en-US", {
-                        hour: "2-digit",
-                        minute: "2-digit",
-                        hour12: true,
-                      }),
-                    });
-                  }}
+                  onClick={() => setSelectedSlotId(formatSlot(slot))}
                   className={`group flex flex-col gap-3 rounded-3xl border p-5 text-left transition-all duration-200 ${
                     selectedSlotId.id === slot.id
                       ? "border-sky-400/40 bg-sky-500/10 shadow-[0_20px_55px_-38px_rgba(56,189,248,0.6)]"
@@ -167,17 +232,19 @@ const BookingPanel = ({ dates, user }) => {
               </p>
               <div className="mt-5 space-y-4">
                 <div className="rounded-3xl bg-slate-900/75 p-5">
-                  <p className="text-sm text-slate-400">Date</p>
+                  <p className="text-sm text-slate-400">Day</p>
                   <p className="mt-2 text-2xl font-semibold text-white">
                     {selectedSlotId.day}
                   </p>
                 </div>
                 <div className="rounded-3xl bg-slate-900/75 p-5">
-                  <p className="text-sm text-slate-400">
-                    {selectedSlotId.hour}
-                  </p>
+                  <p className="text-sm text-slate-400">Date</p>
                   <p className="mt-2 text-2xl font-semibold text-white">
                     {selectedSlotId.date}
+                  </p>
+                  <p className="mt-2 text-sm text-slate-400">Time</p>
+                  <p className="mt-1 text-lg font-semibold text-white">
+                    {selectedSlotId.hour}
                   </p>
                 </div>
               </div>
@@ -192,11 +259,11 @@ const BookingPanel = ({ dates, user }) => {
                 </p>
                 <button
                   type="button"
-                  // onClick={handleReserve}
-                  className="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-linear-to-r from-sky-500 to-indigo-500 px-6 py-4 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition duration-200 hover:scale-[1.01] hover:shadow-sky-500/50 active:scale-95"
+                  disabled={!selectedSlotId.id || isSubmitting}
+                  className="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-linear-to-r from-sky-500 to-indigo-500 px-6 py-4 text-sm font-semibold text-white shadow-lg shadow-sky-500/30 transition duration-200 hover:scale-[1.01] hover:shadow-sky-500/50 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
                   onClick={() => onConfirm(selectedSlotId.id)}
                 >
-                  Confirm reservation
+                  {isSubmitting ? "Reserving..." : "Confirm reservation"}
                 </button>
               </>
             ) : (
@@ -204,11 +271,11 @@ const BookingPanel = ({ dates, user }) => {
                 <p className="text-sm text-slate-400">Cancel Registeration!</p>
                 <button
                   type="button"
-                  // onClick={handleReserve}
-                  className="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-red-400 px-6 py-4 text-sm font-semibold text-white shadow-lg shadow-red-500/30 transition duration-200 hover:scale-[1.01] hover:shadow-red-500/50 active:scale-95"
+                  disabled={isSubmitting}
+                  className="mt-5 inline-flex w-full items-center justify-center rounded-xl bg-red-400 px-6 py-4 text-sm font-semibold text-white shadow-lg shadow-red-500/30 transition duration-200 hover:scale-[1.01] hover:shadow-red-500/50 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
                   onClick={() => onCancel(selectedSlotId.id)}
                 >
-                  Cancel Registeration
+                  {isSubmitting ? "Cancelling..." : "Cancel Registeration"}
                 </button>
               </>
             )}
