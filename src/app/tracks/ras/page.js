@@ -4,7 +4,7 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import BestMemberSpotlight from "./components/BestMemberSpotlight";
 
-const trackName = "RAS";
+const trackName = "Microcontrollers";
 
 const trackTeam = {
   viceHead: {

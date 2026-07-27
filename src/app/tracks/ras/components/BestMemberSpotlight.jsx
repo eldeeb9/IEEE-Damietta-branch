@@ -75,10 +75,11 @@ const BestMemberSpotlight = ({ member }) => {
             <div className="absolute inset-0 animate-pulse rounded-full bg-linear-to-br from-amber-400/40 via-fuchsia-500/20 to-sky-400/30 blur-xl" />
             <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-amber-300/50 bg-slate-900 shadow-[0_0_40px_rgba(251,191,36,0.35)] ring-4 ring-amber-400/20">
               <Image
-                src={member.photo}
+                // src={member.photo}
+                src="/"
                 alt={member.name}
                 fill
-                className="object-cover"
+                className="object-cover object-top"
                 priority
               />
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18),transparent_45%)]" />

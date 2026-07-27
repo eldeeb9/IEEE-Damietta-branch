@@ -4,7 +4,7 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import BestMemberSpotlight from "../ras/components/BestMemberSpotlight";
 
-const trackName = "Advanced Electronics";
+const trackName = "Basic Electronics";
 
 const trackTeam = {
   instructor: {
@@ -19,22 +19,21 @@ const trackTeam = {
   },
   technicalSupport: [
     {
-      name: "Norhan Hazem",
-      title: "Technical Support",
+      name: "Amal Samir",
+      title: "Instructor",
 
-      photo: "/images/branch-members/norhan-hazem.jpeg",
+      photo: "/images/branch-members/amal-samir.jpeg",
     },
     {
-      name: "Rahma Hesham",
+      name: "Mohamed Rezk",
       title: "Technical Support",
-      photo: "/images/branch-members/rahma-hesham.jpeg",
+      photo: "/images/branch-members/basic-electronics.jpeg",
     },
   ],
   bestMember: {
     name: "Ahmed Safwat",
     title: "Best Member",
-    description:
-      `The standout member of the ${trackName} track this season, excelling in execution, collaboration, and creativity.`,
+    description: `The standout member of the ${trackName} track this season, excelling in execution, collaboration, and creativity.`,
     photo: "/images/branch-members/PHOTO-2026-06-24-20-40-03.jpg",
   },
 };
@@ -61,7 +60,8 @@ const page = () => {
             </h1>
             <p className="mx-auto max-w-2xl text-slate-300 sm:text-lg">
               Discover the leadership, instructor, and technical support behind
-              the {trackName} track — crowned by our celebratory best member highlight.
+              the {trackName} track — crowned by our celebratory best member
+              highlight.
             </p>
           </div>
 
@@ -118,7 +118,7 @@ const page = () => {
               <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <h2 className="text-2xl font-bold">Instructors</h2>
+                    <h2 className="text-2xl font-bold">Instructors & Technical Support</h2>
                   </div>
                 </div>
 
@@ -140,8 +140,8 @@ const page = () => {
                         <div>
                           <p className="font-semibold">{support.name}</p>
                           <p className="text-sm text-slate-400">
-                            {/* {support.title} */}
-                            Instructor
+                            {support.title}
+                            {/* Instructor */}
                           </p>
                         </div>
                       </div>

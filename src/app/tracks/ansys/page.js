@@ -4,37 +4,31 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import BestMemberSpotlight from "../ras/components/BestMemberSpotlight";
 
-const trackName = "Advanced Electronics";
+const trackName = "Mechanical Analysis ";
 
 const trackTeam = {
-  instructor: {
-    name: "Eng. Youssef Ahmed",
-    title: "Head",
-    photo: "/images/branch-members/youssef-ahmed.jpeg",
-  },
   viceHead: {
-    name: "Eng. Eyad Fayed",
+    name: "Eng. Ahmed Ehab Moussa",
     title: "Vice Head",
-    photo: "/images/branch-members/eyad-fayed.jpeg",
+    photo: "/images/branch-members/moussa.jpeg",
+  },
+  instructor: {
+    name: "Eng. Mohamed Khaled",
+    title: "Head",
+    photo: "/images/branch-members/mohamed-khaled.jpg",
   },
   technicalSupport: [
     {
-      name: "Norhan Hazem",
-      title: "Technical Support",
+      name: "Mona Wahba",
+      title: "Supervisor",
 
-      photo: "/images/branch-members/norhan-hazem.jpeg",
-    },
-    {
-      name: "Rahma Hesham",
-      title: "Technical Support",
-      photo: "/images/branch-members/rahma-hesham.jpeg",
+      photo: "/images/branch-members/mona-wahba.jpg",
     },
   ],
   bestMember: {
     name: "Ahmed Safwat",
     title: "Best Member",
-    description:
-      `The standout member of the ${trackName} track this season, excelling in execution, collaboration, and creativity.`,
+    description: `The standout member of the ${trackName} track this season, excelling in execution, collaboration, and creativity.`,
     photo: "/images/branch-members/PHOTO-2026-06-24-20-40-03.jpg",
   },
 };
@@ -61,7 +55,8 @@ const page = () => {
             </h1>
             <p className="mx-auto max-w-2xl text-slate-300 sm:text-lg">
               Discover the leadership, instructor, and technical support behind
-              the {trackName} track — crowned by our celebratory best member highlight.
+              the {trackName} track — crowned by our celebratory best member
+              highlight.
             </p>
           </div>
 
@@ -112,41 +107,6 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                </div>
-              </div>
-
-              <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h2 className="text-2xl font-bold">Instructors</h2>
-                  </div>
-                </div>
-
-                <div className="mt-8 grid gap-6 md:grid-cols-2">
-                  {trackTeam.technicalSupport.map((support) => (
-                    <div
-                      key={support.name}
-                      className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-5 shadow-lg"
-                    >
-                      <div className="flex items-center gap-4">
-                        <div className="relative h-20 w-20 overflow-hidden rounded-3xl border border-slate-700 bg-slate-900">
-                          <Image
-                            src={support.photo}
-                            alt={support.name}
-                            fill
-                            className="object-cover object-top"
-                          />
-                        </div>
-                        <div>
-                          <p className="font-semibold">{support.name}</p>
-                          <p className="text-sm text-slate-400">
-                            {/* {support.title} */}
-                            Instructor
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>

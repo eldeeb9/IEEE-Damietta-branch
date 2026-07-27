@@ -4,37 +4,26 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import BestMemberSpotlight from "../ras/components/BestMemberSpotlight";
 
-const trackName = "Advanced Electronics";
+const trackName = "Simulation SolidWorks";
 
 const trackTeam = {
   instructor: {
-    name: "Eng. Youssef Ahmed",
+    name: "Eng. Ziad Ashraf Kaseb",
     title: "Head",
-    photo: "/images/branch-members/youssef-ahmed.jpeg",
-  },
-  viceHead: {
-    name: "Eng. Eyad Fayed",
-    title: "Vice Head",
-    photo: "/images/branch-members/eyad-fayed.jpeg",
+    photo: "/images/branch-members/ziad-kaseb.jpg",
   },
   technicalSupport: [
     {
-      name: "Norhan Hazem",
-      title: "Technical Support",
+      name: "samy osama shata",
+      title: "Supervisor",
 
-      photo: "/images/branch-members/norhan-hazem.jpeg",
-    },
-    {
-      name: "Rahma Hesham",
-      title: "Technical Support",
-      photo: "/images/branch-members/rahma-hesham.jpeg",
+      photo: "/images/branch-members/samy-osama.jpg",
     },
   ],
   bestMember: {
     name: "Ahmed Safwat",
     title: "Best Member",
-    description:
-      `The standout member of the ${trackName} track this season, excelling in execution, collaboration, and creativity.`,
+    description: `The standout member of the ${trackName} track this season, excelling in execution, collaboration, and creativity.`,
     photo: "/images/branch-members/PHOTO-2026-06-24-20-40-03.jpg",
   },
 };
@@ -61,16 +50,15 @@ const page = () => {
             </h1>
             <p className="mx-auto max-w-2xl text-slate-300 sm:text-lg">
               Discover the leadership, instructor, and technical support behind
-              the {trackName} track — crowned by our celebratory best member highlight.
+              the {trackName} track — crowned by our celebratory best member
+              highlight.
             </p>
           </div>
 
           <div className="grid gap-8 xl:grid-cols-[1.4fr_0.9fr]">
             <div className="space-y-8">
               <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
-                <h2 className="mb-6 text-2xl font-bold text-white">
-                  Head & Vice Head
-                </h2>
+                <h2 className="mb-6 text-2xl font-bold text-white">Head</h2>
                 <div className="grid gap-6 lg:grid-cols-2">
                   <div className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-6 shadow-lg">
                     <div className="flex flex-col items-center gap-5 text-center">
@@ -92,33 +80,13 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-6 shadow-lg">
-                    <div className="flex flex-col items-center gap-5 text-center">
-                      <div className="relative h-44 w-44 overflow-hidden rounded-full border-4 border-cyan-500/30 bg-slate-800">
-                        <Image
-                          src={trackTeam.viceHead.photo}
-                          alt={trackTeam.viceHead.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-lg font-semibold">
-                          {trackTeam.viceHead.name}
-                        </p>
-                        <p className="text-sm text-slate-400">
-                          {trackTeam.viceHead.title}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </div>
 
               <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <h2 className="text-2xl font-bold">Instructors</h2>
+                    <h2 className="text-2xl font-bold">Supervisors</h2>
                   </div>
                 </div>
 
@@ -140,8 +108,7 @@ const page = () => {
                         <div>
                           <p className="font-semibold">{support.name}</p>
                           <p className="text-sm text-slate-400">
-                            {/* {support.title} */}
-                            Instructor
+                            {support.title}
                           </p>
                         </div>
                       </div>
