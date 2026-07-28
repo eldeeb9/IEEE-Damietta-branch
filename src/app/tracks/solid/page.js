@@ -19,6 +19,11 @@ const trackTeam = {
 
       photo: "/images/branch-members/samy-osama.jpg",
     },
+    {
+      title: "Supervisor",
+      name: "Eng. Menna Mohamed",
+      photo: "/images/branch-members/menna-mohamed.jpg",
+    },
   ],
   bestMember: {
     name: "Ahmed Safwat",

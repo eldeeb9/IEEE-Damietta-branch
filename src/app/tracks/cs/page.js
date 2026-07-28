@@ -59,7 +59,7 @@ const page = () => {
                           src={trackTeam.instructor.photo}
                           alt={trackTeam.instructor.name}
                           fill
-                          className="object-cover"
+                          className="object-cover object-top"
                         />
                       </div>
                       <div>

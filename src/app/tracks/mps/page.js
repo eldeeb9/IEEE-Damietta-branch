@@ -13,9 +13,9 @@ const trackTeam = {
     photo: "/images/branch-members/ahmed-belal.jpg",
   },
   instructor: {
-    name: "Eng. Menna Mohamed",
+    name: "Eng. Menna Tollah Elkhniny",
     title: "Head",
-    photo: "/images/branch-members/menna-mohamed.jpg",
+    photo: "/images/branch-members/menna-elkheny.jpeg",
   },
   technicalSupport: [
     {
