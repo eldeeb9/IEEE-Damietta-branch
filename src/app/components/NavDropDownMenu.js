@@ -15,6 +15,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
+import { trackHubNavItems } from "../tracks/data/trackHubs";
 
 export function DropdownMenuDemo() {
   return (
@@ -28,16 +29,13 @@ export function DropdownMenuDemo() {
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="start">
-        <DropdownMenuItem>
-          <Link href="/tracks/automation" className="w-full">
-            Automation
-          </Link>
-        </DropdownMenuItem>
-        {/* <DropdownMenuItem>
-          <Link href="/tracks/ras" className="w-full">
-            Microcontrollers
-          </Link>
-        </DropdownMenuItem> */}
+        {trackHubNavItems.map((item) => (
+          <DropdownMenuItem key={item.route}>
+            <Link href={item.route} className="w-full">
+              {item.name}
+            </Link>
+          </DropdownMenuItem>
+        ))}
       </DropdownMenuContent>
     </DropdownMenu>
   );

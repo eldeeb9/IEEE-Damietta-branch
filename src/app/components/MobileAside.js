@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { createPortal } from "react-dom";
 import Link from "next/link";
 import NavLink from "./NavLink";
+import { trackHubNavItems } from "../tracks/data/trackHubs";
 
 export default function MobileAside({ user, open, onClose }) {
   const [tracksOpen, setTracksOpen] = useState(false);
@@ -169,20 +170,17 @@ export default function MobileAside({ user, open, onClose }) {
                   </button>
 
                   <div
-                    className={`overflow-hidden transition-all duration-300 ease-out ${tracksOpen ? "max-h-16 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-1"}`}
+                    className={`overflow-hidden transition-all duration-300 ease-out ${tracksOpen ? "max-h-40 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-1"}`}
                   >
-                    <NavLink
-                      name="Automation"
-                      route="/tracks/automation"
-                      asListItem={false}
-                      className="block w-full px-5 py-3"
-                    />
-                    {/* <NavLink
-                      name="Microcontrollers"
-                      route="/ras"
-                      asListItem={false}
-                      className="block w-full px-5 py-3"
-                    /> */}
+                    {trackHubNavItems.map((item) => (
+                      <NavLink
+                        key={item.route}
+                        name={item.name}
+                        route={item.route}
+                        asListItem={false}
+                        className="block w-full px-5 py-3"
+                      />
+                    ))}
                   </div>
                 </div>
               </li>

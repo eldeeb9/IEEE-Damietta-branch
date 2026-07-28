@@ -4,27 +4,14 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 import BestMemberSpotlight from "../micro/components/BestMemberSpotlight";
 
-const trackName = "MPS";
+const trackName = "Competitive programming";
 
 const trackTeam = {
-  viceHead: {
-    name: "Eng. Ahmed Belal",
-    title: "Vice Head",
-    photo: "/images/branch-members/ahmed-belal.jpg",
-  },
   instructor: {
-    name: "Eng. Menna Tollah Elkhniny",
+    name: "Eng. Belal El Bably",
     title: "Head",
-    photo: "/images/branch-members/menna-elkheny.jpeg",
+    photo: "/images/branch-members/belal.jpg",
   },
-  technicalSupport: [
-    {
-      name: "Mona Wahba",
-      title: "Supervisor",
-
-      photo: "/images/branch-members/mona-wahba.jpg",
-    },
-  ],
   bestMember: {
     name: "Ahmed Safwat",
     title: "Best Member",
@@ -63,9 +50,7 @@ const page = () => {
           <div className="grid gap-8 xl:grid-cols-[1.4fr_0.9fr]">
             <div className="space-y-8">
               <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
-                <h2 className="mb-6 text-2xl font-bold text-white">
-                Head & Vice Head
-                </h2>
+                <h2 className="mb-6 text-2xl font-bold text-white">Head</h2>
                 <div className="grid gap-6 lg:grid-cols-2">
                   <div className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-6 shadow-lg">
                     <div className="flex flex-col items-center gap-5 text-center">
@@ -74,7 +59,7 @@ const page = () => {
                           src={trackTeam.instructor.photo}
                           alt={trackTeam.instructor.name}
                           fill
-                          className="object-cover"
+                          className="object-cover object-top"
                         />
                       </div>
                       <div>
@@ -87,60 +72,6 @@ const page = () => {
                       </div>
                     </div>
                   </div>
-                  <div className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-6 shadow-lg">
-                    <div className="flex flex-col items-center gap-5 text-center">
-                      <div className="relative h-44 w-44 overflow-hidden rounded-full border-4 border-cyan-500/30 bg-slate-800">
-                        <Image
-                          src={trackTeam.viceHead.photo}
-                          alt={trackTeam.viceHead.name}
-                          fill
-                          className="object-cover"
-                        />
-                      </div>
-                      <div>
-                        <p className="text-lg font-semibold">
-                          {trackTeam.viceHead.name}
-                        </p>
-                        <p className="text-sm text-slate-400">
-                          {trackTeam.viceHead.title}
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <h2 className="text-2xl font-bold">Supervisors</h2>
-                  </div>
-                </div>
-
-                <div className="mt-8 grid gap-6 md:grid-cols-2">
-                  {trackTeam.technicalSupport.map((support) => (
-                    <div
-                      key={support.name}
-                      className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-5 shadow-lg"
-                    >
-                      <div className="flex items-center gap-4">
-                        <div className="relative h-20 w-20 overflow-hidden rounded-3xl border border-slate-700 bg-slate-900">
-                          <Image
-                            src={support.photo}
-                            alt={support.name}
-                            fill
-                            className="object-cover object-top"
-                          />
-                        </div>
-                        <div>
-                          <p className="font-semibold">{support.name}</p>
-                          <p className="text-sm text-slate-400">
-                            {support.title}
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  ))}
                 </div>
               </div>
             </div>

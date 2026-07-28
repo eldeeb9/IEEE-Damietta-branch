@@ -2,33 +2,49 @@ import React from "react";
 import Image from "next/image";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-import BestMemberSpotlight from "../micro/components/BestMemberSpotlight";
+import BestMemberSpotlight from "./components/BestMemberSpotlight";
 
-const trackName = "MPS";
+const trackName = "Microcontrollers";
 
 const trackTeam = {
   viceHead: {
-    name: "Eng. Ahmed Belal",
-    title: "Vice Head",
-    photo: "/images/branch-members/ahmed-belal.jpg",
+    name: "Eng. Omar Salama",
+    title: "Vice Head | Instructor",
+    photo: "/images/branch-members/salama.jpg",
   },
   instructor: {
-    name: "Eng. Menna Tollah Elkhniny",
-    title: "Head",
-    photo: "/images/branch-members/menna-elkheny.jpeg",
+    name: "Eng. Yahia Hagag",
+    title: "Head | Instructor",
+    photo: "/images/branch-members/yahia.jpg",
   },
   technicalSupport: [
     {
-      name: "Mona Wahba",
-      title: "Supervisor",
+      name: "Ahmed Safwat",
+      title: "Technical Support",
 
-      photo: "/images/branch-members/mona-wahba.jpg",
+      photo: "/images/branch-members/PHOTO-2026-06-24-20-06-03.jpg",
+    },
+    {
+      name: "Rovana Mohamed",
+      title: "Technical Support",
+      photo: "/images/branch-members/PHOTO-2026-07-24-16-39-42.jpg",
+    },
+    {
+      name: "Rahma Sadoun",
+      title: "Technical Support",
+      photo: "/images/branch-members/PHOTO-2026-07-24-16-40-00.jpg",
+    },
+    {
+      name: "Dalia",
+      title: "Technical Support",
+      photo: "/images/branch-members/PHOTO-2026-07-24-17-58-27.jpg",
     },
   ],
   bestMember: {
     name: "Ahmed Safwat",
     title: "Best Member",
-    description: `The standout member of the ${trackName} track this season, excelling in execution, collaboration, and creativity.`,
+    description:
+      `The standout member of the ${trackName} track this season, excelling in execution, collaboration, and creativity.`,
     photo: "/images/branch-members/PHOTO-2026-06-24-20-40-03.jpg",
   },
 };
@@ -55,8 +71,7 @@ const page = () => {
             </h1>
             <p className="mx-auto max-w-2xl text-slate-300 sm:text-lg">
               Discover the leadership, instructor, and technical support behind
-              the {trackName} track — crowned by our celebratory best member
-              highlight.
+              the {trackName} track — crowned by our celebratory best member highlight.
             </p>
           </div>
 
@@ -64,7 +79,7 @@ const page = () => {
             <div className="space-y-8">
               <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
                 <h2 className="mb-6 text-2xl font-bold text-white">
-                Head & Vice Head
+                  Vice Head & Instructor
                 </h2>
                 <div className="grid gap-6 lg:grid-cols-2">
                   <div className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-6 shadow-lg">
@@ -113,7 +128,14 @@ const page = () => {
               <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
                 <div className="flex items-center justify-between gap-4">
                   <div>
-                    <h2 className="text-2xl font-bold">Supervisors</h2>
+                    <h2 className="text-2xl font-bold">Technical Support</h2>
+                    <p className="mt-2 text-slate-400">
+                      Our technical support team is ready to help you with
+                      programming, hardware, and tools.
+                    </p>
+                  </div>
+                  <div className="rounded-full bg-sky-500/15 px-4 py-2 text-sm font-semibold text-sky-200">
+                    Team Support
                   </div>
                 </div>
 

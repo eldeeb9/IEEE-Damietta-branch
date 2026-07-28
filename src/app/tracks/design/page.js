@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
-import BestMemberSpotlight from "../ras/components/BestMemberSpotlight";
+import BestMemberSpotlight from "../micro/components/BestMemberSpotlight";
 
 const trackName = "Mechanical Design";
 

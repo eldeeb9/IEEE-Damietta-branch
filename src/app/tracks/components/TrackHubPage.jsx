@@ -1,0 +1,123 @@
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, User } from "lucide-react";
+import Nav from "../../components/Nav";
+import Footer from "../../components/Footer";
+
+function LeadershipCard({ person, borderClass }) {
+  return (
+    <div className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-6 shadow-lg">
+      <div className="flex flex-col items-center gap-5 text-center">
+        <div
+          className={`relative flex h-44 w-44 items-center justify-center overflow-hidden rounded-full border-4 bg-slate-800 ${borderClass}`}
+        >
+          {person.photo ? (
+            <Image
+              src={person.photo}
+              alt={person.name}
+              fill
+              className="object-cover"
+            />
+          ) : (
+            <User className="h-16 w-16 text-slate-500" strokeWidth={1.5} />
+          )}
+        </div>
+        <div>
+          <p className="text-lg font-semibold">{person.name}</p>
+          <p className="text-sm text-slate-400">{person.title}</p>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export default function TrackHubPage({ hub }) {
+  const { accent, leadership, workshops } = hub;
+
+  return (
+    <div className="min-h-screen bg-slate-950 text-white">
+      <Nav />
+
+      <main className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-x-0 top-0 -z-10 overflow-hidden">
+          <div
+            className={`absolute left-10 top-10 h-40 w-40 rounded-full blur-3xl ${accent.orb1}`}
+          />
+          <div
+            className={`absolute right-0 top-24 h-48 w-48 rounded-full blur-3xl ${accent.orb2}`}
+          />
+          <div
+            className={`absolute left-1/2 top-40 h-32 w-32 rounded-full blur-3xl ${accent.orb3}`}
+          />
+        </div>
+
+        <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+          <div className="relative mb-12 space-y-4 text-center">
+            <div className="pointer-events-none absolute inset-x-0 top-1/2 -z-10 h-px bg-linear-to-r from-transparent via-amber-300/40 to-transparent" />
+            <p className="text-sm font-medium uppercase tracking-[0.2em] text-slate-400">
+              {hub.name} Track
+            </p>
+            <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl">
+              <span
+                className={`bg-linear-to-r ${accent.gradient} bg-clip-text text-transparent`}
+              >
+                {hub.fullName}
+              </span>
+            </h1>
+            <p className="mx-auto max-w-2xl text-slate-300 sm:text-lg">
+              {hub.description}
+            </p>
+          </div>
+
+          <div className="mb-16">
+            <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
+              <h2 className="mb-6 text-2xl font-bold text-white">
+                Leadership
+              </h2>
+              <div className="grid gap-6 lg:grid-cols-2">
+                <LeadershipCard
+                  person={leadership.head}
+                  borderClass="border-amber-400/30"
+                />
+                {leadership.viceHead && <LeadershipCard
+                  person={leadership.viceHead}
+                  borderClass="border-cyan-500/30"
+                />}
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="mb-8 text-center text-2xl font-bold text-white sm:text-3xl">
+              Our Workshops
+            </h2>
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {workshops.map((workshop) => (
+                <Link
+                  key={workshop.slug}
+                  href={`/tracks/${workshop.slug}`}
+                  className={`group rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6 shadow-lg backdrop-blur-xl transition-all duration-300 ${accent.hoverBorder} hover:bg-slate-800/80 hover:shadow-xl`}
+                >
+                  <div className="flex h-full flex-col gap-3">
+                    <div className="flex items-start justify-between gap-3">
+                      <h3 className="text-lg font-semibold text-white">
+                        {workshop.name}
+                      </h3>
+                      <ArrowRight className="mt-0.5 h-5 w-5 shrink-0 text-slate-500 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
+                    </div>
+                    <p className="text-sm leading-relaxed text-slate-400">
+                      {workshop.description}
+                    </p>
+                  </div>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
