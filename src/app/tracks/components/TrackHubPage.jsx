@@ -109,6 +109,12 @@ export default function TrackHubPage({ hub }) {
                     borderClass="border-cyan-500/30"
                   />
                 )}
+                {leadership.viceHead2 && (
+                  <LeadershipCard
+                    person={leadership.viceHead2}
+                    borderClass="border-cyan-500/30"
+                  />
+                )}
               </div>
             </div>
           </div>
