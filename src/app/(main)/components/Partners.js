@@ -15,6 +15,12 @@ const partners = [
     name: "PN Tech",
     link: "https://pn-tech.store/",
   },
+  {
+    src: "/images/partners/Worktopia.png",
+    alt: "Worktopia",
+    name: "Worktopia",
+    link: "https://www.facebook.com/profile.php?id=61574901843396", 
+  }
 ];
 
 const Partners = () => {

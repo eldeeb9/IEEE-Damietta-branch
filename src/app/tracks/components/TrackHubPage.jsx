@@ -1,7 +1,19 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, User } from "lucide-react";
+import {
+  User,
+  Cpu,
+  Zap,
+  Plug,
+  Microchip,
+  BatteryCharging,
+  Box,
+  Activity,
+  Factory,
+  Wrench,
+  Code2,
+} from "lucide-react";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 
@@ -34,6 +46,19 @@ function LeadershipCard({ person, borderClass }) {
 
 export default function TrackHubPage({ hub }) {
   const { accent, leadership, workshops } = hub;
+
+  const workshopIcons = {
+    micro: Cpu,
+    automation: Zap,
+    electronics: Plug,
+    embedded: Microchip,
+    "basic-electronics": BatteryCharging,
+    solid: Box,
+    ansys: Activity,
+    mps: Factory,
+    design: Wrench,
+    cp: Code2,
+  };
 
   return (
     <div className="min-h-screen bg-slate-950 text-white">
@@ -72,18 +97,18 @@ export default function TrackHubPage({ hub }) {
 
           <div className="mb-16">
             <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
-              <h2 className="mb-6 text-2xl font-bold text-white">
-                Leadership
-              </h2>
+              <h2 className="mb-6 text-2xl font-bold text-white">Leadership</h2>
               <div className="grid gap-6 lg:grid-cols-2">
                 <LeadershipCard
                   person={leadership.head}
                   borderClass="border-amber-400/30"
                 />
-                {leadership.viceHead && <LeadershipCard
-                  person={leadership.viceHead}
-                  borderClass="border-cyan-500/30"
-                />}
+                {leadership.viceHead && (
+                  <LeadershipCard
+                    person={leadership.viceHead}
+                    borderClass="border-cyan-500/30"
+                  />
+                )}
               </div>
             </div>
           </div>
@@ -93,25 +118,32 @@ export default function TrackHubPage({ hub }) {
               Our Workshops
             </h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {workshops.map((workshop) => (
-                <Link
-                  key={workshop.slug}
-                  href={`/tracks/${workshop.slug}`}
-                  className={`group rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6 shadow-lg backdrop-blur-xl transition-all duration-300 ${accent.hoverBorder} hover:bg-slate-800/80 hover:shadow-xl`}
-                >
-                  <div className="flex h-full flex-col gap-3">
-                    <div className="flex items-start justify-between gap-3">
-                      <h3 className="text-lg font-semibold text-white">
-                        {workshop.name}
-                      </h3>
-                      <ArrowRight className="mt-0.5 h-5 w-5 shrink-0 text-slate-500 transition-transform duration-300 group-hover:translate-x-1 group-hover:text-white" />
+              {workshops.map((workshop) => {
+                const Icon = workshopIcons[workshop.slug] || Activity;
+                return (
+                  <Link
+                    key={workshop.slug}
+                    href={`/tracks/${workshop.slug}`}
+                    className={`group rounded-[1.75rem] border border-white/10 bg-slate-900/80 p-6 shadow-lg backdrop-blur-xl transition-all duration-300 ${accent.hoverBorder} hover:bg-slate-800/80 hover:shadow-xl`}
+                  >
+                    <div className="flex h-full flex-col items-center justify-center gap-6 text-center">
+                      <div className="flex items-center justify-center transition-all duration-300 group-hover:scale-105">
+                        <div
+                          style={{
+                            clipPath:
+                              "polygon(25% 6%, 75% 6%, 100% 50%, 75% 94%, 25% 94%, 0% 50%)",
+                          }}
+                          className="flex h-40 w-40 items-center justify-center bg-slate-800/90 text-slate-100 shadow-lg ring-1 ring-white/10"
+                        >
+                          <Icon className="h-20 w-20" />
+                        </div>
+                      </div>
+                      <h3 className="text-lg font-semibold text-white">{workshop.name}</h3>
+                      <p className="text-sm leading-relaxed text-slate-400">{workshop.description}</p>
                     </div>
-                    <p className="text-sm leading-relaxed text-slate-400">
-                      {workshop.description}
-                    </p>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                );
+              })}
             </div>
           </div>
         </section>

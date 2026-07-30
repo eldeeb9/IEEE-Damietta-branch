@@ -12,8 +12,16 @@ export const trackHubs = {
       hoverBorder: "hover:border-amber-400/40",
     },
     leadership: {
-      head: { name: "Yahia Hagag", title: "Head", photo: "/images/branch-members/yahia.jpg" },
-      viceHead: { name: "Youssef Ahmed", title: "Vice Head", photo: "/images/branch-members/youssef-ahmed.jpeg" },
+      head: {
+        name: "Yahia Hagag",
+        title: "Head",
+        photo: "/images/branch-members/yahia.jpg",
+      },
+      viceHead: {
+        name: "Youssef Ahmed",
+        title: "Vice Head",
+        photo: "/images/branch-members/youssef-ahmed.jpeg",
+      },
     },
     workshops: [
       {
@@ -21,30 +29,35 @@ export const trackHubs = {
         name: "Microcontrollers",
         description:
           "Learn microcontroller programming, interfacing, and embedded fundamentals.",
+        image: "/images/workshops/micro.svg",
       },
       {
         slug: "automation",
         name: "Automation",
         description:
           "Hands-on automation workshops with practical industrial applications.",
+        image: "/images/workshops/automation.svg",
       },
       {
         slug: "electronics",
         name: "Advanced Electronics",
         description:
           "Dive deeper into circuit design, analysis, and advanced electronics.",
+        image: "/images/workshops/electronics.svg",
       },
       {
         slug: "embedded",
         name: "Embedded System",
         description:
           "Build real embedded systems from hardware design to firmware integration.",
+        image: "/images/workshops/embedded.svg",
       },
       {
         slug: "basic-electronics",
         name: "Basic Electronics",
         description:
           "Start with the fundamentals of electronics, components, and circuits.",
+        image: "/images/workshops/basic-electronics.svg",
       },
     ],
   },
@@ -61,33 +74,48 @@ export const trackHubs = {
       hoverBorder: "hover:border-emerald-400/40",
     },
     leadership: {
-      head: { name: "Mohamed Khames", title: "Head", photo: "/images/branch-members/khames.jpeg" },
-      viceHead: { name: "Rohayem Abd El-salam", title: "Vice Head", photo: "/images/branch-members/rohayem.jpeg" },
+      head: {
+        name: "Mohamed Khames",
+        title: "Head",
+        photo: "/images/branch-members/khames.jpeg",
+      },
+      viceHead: {
+        name: "Rohayem Abd El-salam",
+        title: "Vice Head",
+        photo: "/images/branch-members/rohayem.jpeg",
+      },
+      viceHead2: {
+        name: "Mohamed Elfar",
+        title: "Vice Head",
+        photo: "/images/branch-members/elfar.jpeg",
+      },
     },
     workshops: [
       {
         slug: "solid",
         name: "Simulation SolidWorks",
-        description:
-          "Master 3D modeling and simulation using SolidWorks.",
+        description: "Master 3D modeling and simulation using SolidWorks.",
+        image: "/images/workshops/solid.svg",
       },
       {
         slug: "ansys",
         name: "Mechanical Analysis",
         description:
           "Perform structural and mechanical analysis with ANSYS tools.",
+        image: "/images/workshops/ansys.svg",
       },
       {
         slug: "mps",
         name: "MPS",
-        description:
-          "Explore manufacturing processes and production systems.",
+        description: "Explore manufacturing processes and production systems.",
+        image: "/images/workshops/mps.svg",
       },
       {
         slug: "design",
         name: "Mechanical Design",
         description:
           "Learn mechanical design principles and engineering drawing skills.",
+        image: "/images/workshops/design.svg",
       },
     ],
   },
@@ -104,7 +132,11 @@ export const trackHubs = {
       hoverBorder: "hover:border-violet-400/40",
     },
     leadership: {
-      head: { name: "Belal El Bably", title: "Head", photo: "/images/branch-members/belal.jpg" },
+      head: {
+        name: "Belal El Bably",
+        title: "Head",
+        photo: "/images/branch-members/belal.jpg",
+      },
       // viceHead: { name: "TBD", title: "Vice Head", photo: null },
     },
     workshops: [
@@ -113,6 +145,7 @@ export const trackHubs = {
         name: "Competitive Programming",
         description:
           "Train for coding competitions with algorithms and problem-solving.",
+        image: "/images/workshops/cp.svg",
       },
     ],
   },

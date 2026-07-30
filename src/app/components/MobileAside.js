@@ -170,8 +170,9 @@ export default function MobileAside({ user, open, onClose }) {
                   </button>
 
                   <div
-                    className={`overflow-hidden transition-all duration-300 ease-out ${tracksOpen ? "max-h-40 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-1"}`}
+                    className={`overflow-hidden transition-all duration-300 ease-out ${tracksOpen ? "max-h-44 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-1"}`}
                   >
+                    <div className="data-inset:pl-7 text-xs font-normal text-muted-foreground px-2 py-1.5">Technical Workshops</div>
                     {trackHubNavItems.map((item) => (
                       <NavLink
                         key={item.route}

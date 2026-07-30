@@ -24,12 +24,13 @@ export function DropdownMenuDemo() {
         <button
           className={`hover:bg-[#0056b31a] hover:text-ieee-primary py-1.25 px-2.5 rounded-[5px] transition-colors flex items-center gap-1 outline-none`}
         >
-          <span>Tracks</span>
+          <span>Societies</span>
           <ChevronDown className="size-4" />
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="start">
-        {trackHubNavItems.map((item) => (
+      <DropdownMenuLabel className="text-xs font-normal text-muted-foreground px-2 py-1.5">Technical workshops</DropdownMenuLabel>
+      {trackHubNavItems.map((item) => (
           <DropdownMenuItem key={item.route}>
             <Link href={item.route} className="w-full">
               {item.name}
