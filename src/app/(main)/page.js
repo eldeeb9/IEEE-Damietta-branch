@@ -8,7 +8,7 @@ import Achievments from "./components/Achievments";
 import Questions from "./components/Questions";
 
 export const metadata = {
-  title: "Home",
+  title: "Home | IEEE Damietta Student Branch",
   description:
     "IEEE Damietta Student Branch official website. Discover workshops, events, member benefits, partners, achievements, and join our technical community.",
   keywords: [
@@ -23,7 +23,8 @@ export const metadata = {
     canonical: "https://ieeedamietta.org/",
   },
   openGraph: {
-    title: "IEEE Damietta | Home",
+    siteName: "IEEE Damietta Student Branch",
+    title: "IEEE Damietta Student Branch",
     description:
       "Welcome to the official IEEE Damietta Student Branch site. Explore events, workshops, membership and technical community programs.",
     url: "https://ieeedamietta.org/",
@@ -38,7 +39,7 @@ export const metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "IEEE Damietta | Home",
+    title: "IEEE Damietta Student Branch",
     description:
       "Explore IEEE Damietta's official homepage and join our engineering student community.",
     images: ["/images/logo.jpg"],
@@ -46,8 +47,20 @@ export const metadata = {
 };
 
 const Hello = () => {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "IEEE Damietta Student Branch",
+    "alternateName": ["IEEE Damietta", "IEEE DSB"],
+    "url": "https://ieeedamietta.org/",
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <Nav />
       <Header />
       <Members />
