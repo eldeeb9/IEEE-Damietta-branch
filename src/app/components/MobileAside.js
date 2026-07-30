@@ -154,7 +154,7 @@ export default function MobileAside({ user, open, onClose }) {
                     onClick={() => setTracksOpen((prev) => !prev)}
                     className="flex w-full items-center justify-between px-5 py-3 text-left text-white transition-colors duration-200"
                   >
-                    <span className="font-medium">Tracks</span>
+                    <span className="font-medium">Societies</span>
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       className={`h-4 w-4 transition-transform duration-300 ${tracksOpen ? "rotate-180" : "rotate-0"}`}
