@@ -38,15 +38,12 @@ function createParticle(side, width, height) {
 const CelebrationParticles = ({ active = false, duration = 4200 }) => {
   const canvasRef = useRef(null);
   const frameRef = useRef(null);
-  const startedRef = useRef(false);
 
   useEffect(() => {
-    if (!active || startedRef.current) return;
+    if (!active) return;
 
     const canvas = canvasRef.current;
     if (!canvas) return;
-
-    startedRef.current = true;
 
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
@@ -57,8 +54,12 @@ const CelebrationParticles = ({ active = false, duration = 4200 }) => {
     canvas.height = height;
 
     const particles = [
-      ...Array.from({ length: 55 }, () => createParticle("left", width, height)),
-      ...Array.from({ length: 55 }, () => createParticle("right", width, height)),
+      ...Array.from({ length: 55 }, () =>
+        createParticle("left", width, height),
+      ),
+      ...Array.from({ length: 55 }, () =>
+        createParticle("right", width, height),
+      ),
     ];
 
     const startTime = performance.now();
@@ -78,13 +79,24 @@ const CelebrationParticles = ({ active = false, duration = 4200 }) => {
       ctx.rotate((particle.rotation * Math.PI) / 180);
       ctx.globalAlpha = particle.opacity;
 
-      const gradient = ctx.createLinearGradient(0, -particle.h / 2, 0, particle.h / 2);
+      const gradient = ctx.createLinearGradient(
+        0,
+        -particle.h / 2,
+        0,
+        particle.h / 2,
+      );
       gradient.addColorStop(0, particle.color);
       gradient.addColorStop(1, `${particle.color}88`);
       ctx.fillStyle = gradient;
 
       ctx.beginPath();
-      ctx.roundRect(-particle.w / 2, -particle.h / 2, particle.w, particle.h, 2);
+      ctx.roundRect(
+        -particle.w / 2,
+        -particle.h / 2,
+        particle.w,
+        particle.h,
+        2,
+      );
       ctx.fill();
 
       ctx.restore();
@@ -119,6 +131,8 @@ const CelebrationParticles = ({ active = false, duration = 4200 }) => {
 
       if (elapsed < duration) {
         frameRef.current = requestAnimationFrame(tick);
+      } else {
+        ctx.clearRect(0, 0, width, height);
       }
     };
 
@@ -132,7 +146,7 @@ const CelebrationParticles = ({ active = false, duration = 4200 }) => {
     };
   }, [active, duration]);
 
-  if (!active && !startedRef.current) {
+  if (!active) {
     return null;
   }
 

@@ -129,21 +129,7 @@ export default function MobileAside({ user, open, onClose }) {
                 className="block w-full px-5 py-3"
               />
             </li>
-
-            {!user ? (
-              <li
-                style={{ transitionDelay: "320ms" }}
-                className={`mt-4 transform transition duration-300 ${open ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}
-              >
-                <Link
-                  href="/register"
-                  className="block px-5 py-3 rounded-full bg-ieee-primary text-white font-bold text-center"
-                >
-                  Join now
-                </Link>
-              </li>
-            ) : (
-              <li
+            <li
                 style={{ transitionDelay: "260ms" }}
                 className={`transform transition duration-300 ${open ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}
               >
@@ -172,7 +158,7 @@ export default function MobileAside({ user, open, onClose }) {
                   <div
                     className={`overflow-hidden transition-all duration-300 ease-out ${tracksOpen ? "max-h-44 opacity-100 translate-y-0" : "max-h-0 opacity-0 -translate-y-1"}`}
                   >
-                    <div className="data-inset:pl-7 text-xs font-normal text-muted-foreground px-2 py-1.5">Technical Workshops</div>
+                    <div className="data-inset:pl-7 text-xs font-normal text-muted-foreground px-2 py-1.5">Technical Societies</div>
                     {trackHubNavItems.map((item) => (
                       <NavLink
                         key={item.route}
@@ -184,6 +170,18 @@ export default function MobileAside({ user, open, onClose }) {
                     ))}
                   </div>
                 </div>
+              </li>
+            {!user && (
+              <li
+                style={{ transitionDelay: "320ms" }}
+                className={`mt-4 transform transition duration-300 ${open ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4"}`}
+              >
+                <Link
+                  href="/register"
+                  className="block px-5 py-3 rounded-full bg-ieee-primary text-white font-bold text-center"
+                >
+                  Join now
+                </Link>
               </li>
             )}
           </ul>

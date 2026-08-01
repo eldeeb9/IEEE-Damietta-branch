@@ -14,14 +14,14 @@ const MemberBox = ({
   return (
     <>
       <motion.div
-        initial={{ opacity: 0, y: 60 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        transition={{
-          duration: 0.5,
-          ease: [0.22, 1, 0.36, 1],
-          delay: delay,
-        }}
-        viewport={{ once: true, amount: 0.2 }}
+        // initial={{ opacity: 0, y: 60 }}
+        // whileInView={{ opacity: 1, y: 0 }}
+        // transition={{
+        //   duration: 0.5,
+        //   ease: [0.22, 1, 0.36, 1],
+        //   delay: delay,
+        // }}
+        // viewport={{ once: true, amount: 0.2 }}
         className="relative text-center flex-1 min-w-62.5 max-w-75 p-6 rounded-2xl bg-gradient-to-tl from-slate-700 to-slate-800 shadow text-white relative overflow-hidden"
       >
         <p className="absolute top-0 left-0 bg-gray-200 text-ieee-primary py-2 px-4 rounded-br-3xl">

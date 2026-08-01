@@ -66,8 +66,8 @@ const Hello = () => {
       <Members />
       <Vision />
       <Partners />
-      <Achievments />
-      <Questions />
+      {/* <Achievments /> */}
+      {/* <Questions /> */}
       <Footer />
     </>
   );

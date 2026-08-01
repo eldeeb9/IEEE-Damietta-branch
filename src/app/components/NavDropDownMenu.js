@@ -29,7 +29,7 @@ export function DropdownMenuDemo() {
         </button>
       </DropdownMenuTrigger>
       <DropdownMenuContent className="w-40" align="start">
-      <DropdownMenuLabel className="text-xs font-normal text-muted-foreground px-2 py-1.5">Technical workshops</DropdownMenuLabel>
+      <DropdownMenuLabel className="text-xs font-normal text-muted-foreground px-2 py-1.5">Technical Societies</DropdownMenuLabel>
       {trackHubNavItems.map((item) => (
           <DropdownMenuItem key={item.route}>
             <Link href={item.route} className="w-full">

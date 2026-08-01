@@ -30,6 +30,7 @@ const Nav = async () => {
           <NavLink name="home" route="/" />
           <NavLink name="Events" route="/events" />
           <NavLink name="Blogs" route="/blogs" />
+          <DropdownMenuDemo />
           {!user && (
             <Link
               href="/register"
@@ -40,7 +41,6 @@ const Nav = async () => {
           )}
           {user && (
             <>
-              <DropdownMenuDemo />
               <Link href="/profile" className="flex items-center gap-4">
                 <img
                   src="/images/anonymous-profile.jpg"

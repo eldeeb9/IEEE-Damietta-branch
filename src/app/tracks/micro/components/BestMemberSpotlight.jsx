@@ -1,6 +1,6 @@
 "use client";
 
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
 import { Sparkles, Trophy } from "lucide-react";
@@ -8,13 +8,48 @@ import CelebrationParticles from "../../../components/CelebrationParticles";
 
 const traits = ["Commitment", "Teamwork", "Creativity"];
 
+const useInViewCount = (ref, threshold = 0.4) => {
+  const [enterCount, setEnterCount] = useState(0);
+  const wasInViewRef = useRef(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        const isIntersecting = entry.isIntersecting;
+
+        // نزود العداد بس لما يحصل انتقال من "مش ظاهر" لـ"ظاهر"
+        if (isIntersecting && !wasInViewRef.current) {
+          setEnterCount((prev) => prev + 1);
+        }
+
+        wasInViewRef.current = isIntersecting;
+      },
+      { threshold }
+    );
+
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [ref, threshold]);
+
+  return enterCount;
+};
+
 const BestMemberSpotlight = ({ member }) => {
   const cardRef = useRef(null);
-  const isInView = useInView(cardRef, { once: true, amount: 0.4 });
+  const isInView = useInView(cardRef, { amount: 0.4 });
+
+  const enterCount = useInViewCount(cardRef, 0.4);
+
+  // الأنيميشن يظهر بس لما يكون ده ثاني دخول بالظبط
+  const active = enterCount === 2;
+
 
   return (
     <>
-      <CelebrationParticles active={isInView} />
+      <CelebrationParticles active={active} />
 
       <motion.div
         ref={cardRef}
