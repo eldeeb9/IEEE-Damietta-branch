@@ -8,7 +8,7 @@ import Achievments from "./components/Achievments";
 import Questions from "./components/Questions";
 
 export const metadata = {
-  title: "Home | IEEE Damietta Student Branch",
+  title: "IEEE Damietta Student Branch",
   description:
     "IEEE Damietta Student Branch official website. Discover workshops, events, member benefits, partners, achievements, and join our technical community.",
   keywords: [
@@ -18,6 +18,7 @@ export const metadata = {
     "student branch",
     "engineering events",
     "workshops",
+    "IEEE DSB",
   ],
   alternates: {
     canonical: "https://ieeedamietta.org/",

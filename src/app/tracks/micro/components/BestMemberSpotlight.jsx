@@ -43,6 +43,8 @@ const BestMemberSpotlight = ({ member }) => {
 
   const enterCount = useInViewCount(cardRef, 0.4);
 
+  
+
   // الأنيميشن يظهر بس لما يكون ده ثاني دخول بالظبط
   const active = enterCount === 2;
 

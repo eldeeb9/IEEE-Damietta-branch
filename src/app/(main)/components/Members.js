@@ -19,39 +19,72 @@ const Members = () => {
 
         <section className="pb-12 w-full flex flex-col items-center justify-center text-white">
           <h2 className="text-3xl font-bold mb-8 text-center tracking-wide">
-            Counselor
+            Counselors
           </h2>
 
-          <div className="bg-[#2c3a4e] rounded-2xl p-6 sm:p-8 w-full flex flex-col justify-center sm:flex-row items-center gap-6 sm:gap-10 shadow-lg">
-            <div className="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full p-1 bg-gradient-to-tr from-[#d4af37] via-[#f3e5ab] to-[#b8860b] shrink-0">
-              <div className="w-full h-full rounded-full overflow-hidden relative">
-                <Image
-                  src="/images/branch-members/PHOTO-2026-07-10-20-14-41.jpg" 
-                  alt="Dr. Marwa fayez"
-                  fill
-                  className="object-cover grayscale"
-                  priority
-                />
+          <div className="grid w-full gap-6 sm:grid-cols-2">
+            <div className="relative overflow-hidden rounded-[32px] border bg-slate-800 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.45)]">
+              <div className="flex flex-col items-center gap-6 text-center sm:text-left sm:flex-row sm:items-center">
+                <div className="relative h-40 w-40 rounded-full border-4 border-[#d4af37] bg-slate-950 overflow-hidden shrink-0">
+                  <Image
+                    src="/images/branch-members/PHOTO-2026-07-10-20-14-41.jpg"
+                    alt="Dr. Marwa Fayez"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </div>
+
+                <div className="space-y-3">
+                  <div className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-900/80 px-3 py-1 text-xs uppercase tracking-[0.25em] text-slate-300 sm:justify-start">
+                    Counselor
+                  </div>
+                  <h3 className="text-2xl font-semibold tracking-tight text-white">
+                    Dr. Marwa Fayez
+                  </h3>
+                  <a
+                    href="mailto:marwa_areed@du.edu.eg"
+                    className="inline-flex items-center gap-3 rounded-full border border-slate-700 bg-slate-800/80 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-slate-700"
+                  >
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-700 text-slate-100">
+                      <Mail size={16} />
+                    </div>
+                    <span className="truncate">marwa_areed@du.edu.eg</span>
+                  </a>
+                </div>
               </div>
             </div>
 
-            <div className="flex flex-col items-center sm:items-start text-center sm:text-left gap-3">
-              <h3 className="text-2xl sm:text-3xl font-bold tracking-tight">
-                Dr. Marwa fayez
-              </h3>
-
-              <a
-                href="mailto:marwa_areed@du.edu.eg"
-                className="flex items-center gap-2.5 bg-transparent hover:bg-[#384860] px-2 py-1 rounded-full transition-colors duration-200"
-              >
-                <div className="bg-gray-200 rounded-full p-1.5 flex items-center justify-center shrink-0 w-8 h-8">
-                  <Mail />
+            <div className="relative overflow-hidden rounded-[32px] border bg-slate-800 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.35)]">
+              <div className="flex flex-col items-center gap-6 text-center sm:text-left sm:flex-row sm:items-center">
+                <div className="relative h-40 w-40 rounded-full border-4 border-slate-500 bg-slate-950 overflow-hidden shrink-0">
+                  <Image
+                    src="/images/branch-members/PHOTO-2026-07-30-21-41-43.jpg"
+                    alt="Dr. Hadeer Helaly"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
 
-                <span className="text-sm font-medium text-gray-200 hover:underline">
-                  marwa_areed@du.edu.eg
-                </span>
-              </a>
+                <div className="space-y-3">
+                  <div className="inline-flex items-center justify-center gap-2 rounded-full border border-slate-700 bg-slate-900/70 px-3 py-1 text-xs uppercase tracking-[0.25em] text-slate-400 sm:justify-start">
+                    Co-Counselor
+                  </div>
+                  <h3 className="text-2xl font-semibold tracking-tight text-white">
+                    Dr. Hadeer Helaly
+                  </h3>
+                  <a
+                    href="mailto:hadeerhelaly@du.edu.eg"
+                    className="inline-flex items-center gap-3 rounded-full border border-slate-700 bg-slate-800/80 px-4 py-2 text-sm font-medium text-slate-100 transition hover:bg-slate-700"
+                  >
+                    <div className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-700 text-slate-100">
+                      <Mail size={16} />
+                    </div>
+                    <span className="truncate">hadeerhelaly@du.edu.eg</span>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </section>
