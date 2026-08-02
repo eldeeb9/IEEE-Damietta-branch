@@ -172,7 +172,7 @@ const Partners = () => {
           transition={{ duration: 0.5 }}
           className="text-center max-w-2xl mx-auto mb-2"
         >
-          <h2 className="section__header">Our Partners</h2>
+          <h2 className="section__header mb-8">Our Partners</h2>
         </motion.div>
 
         <PartnerIntroBadge />

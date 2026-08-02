@@ -84,7 +84,7 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="z-10 absolute bottom-24 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
+      <div className="z-10 absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 cursor-pointer opacity-80 hover:opacity-100 transition-opacity">
         <span className="text-white text-xs uppercase tracking-[0.2em] font-medium mb-1">
           Scroll
         </span>
