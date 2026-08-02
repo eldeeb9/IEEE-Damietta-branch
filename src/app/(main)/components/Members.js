@@ -30,7 +30,7 @@ const Members = () => {
                     src="/images/branch-members/PHOTO-2026-07-10-20-14-41.jpg"
                     alt="Dr. Marwa Fayez"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                     priority
                   />
                 </div>
@@ -62,7 +62,7 @@ const Members = () => {
                     src="/images/branch-members/PHOTO-2026-07-30-21-41-43.jpg"
                     alt="Dr. Hadeer Helaly"
                     fill
-                    className="object-cover"
+                    className="object-cover object-top"
                     priority
                   />
                 </div>

@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import Image from "next/image";
 import React, { useState, useEffect, useRef } from "react";
 import { useInView } from "framer-motion";
@@ -29,27 +29,28 @@ const CounterBox = ({ icon, alt, target, label }) => {
   return (
     <div
       ref={ref}
-      className="text-black text-center bg-white rounded-[15px] p-7.5 transition-all duration-300 shadow-[0_5px_20px_rgba(0,0,0,0.1)]"
+      className="rounded-[15px] border border-slate-400/15 bg-slate-800/55 p-7.5 text-center shadow-[0_12px_32px_-12px_rgba(8,47,73,0.6)] backdrop-blur-xl transition-all duration-300 hover:border-sky-400/30"
     >
-      <Image
-        src={icon}
-        alt={alt}
-        width={60}
-        height={60}
-        className="m-auto mb-3"
-      />
-      <h3 className="counter font-bold text-2xl">{count}+</h3>
-      <p>{label}</p>
+      <div className="m-auto mb-3.75 grid h-15 w-15 place-items-center rounded-full border border-sky-400/25 bg-sky-400/10">
+        <Image src={icon} alt={alt} width={32} height={32} />
+      </div>
+      <h3 className="counter font-bold text-2xl text-slate-50">{count}+</h3>
+      <p className="text-slate-400">{label}</p>
     </div>
   );
 };
 
 const Achievments = () => {
   return (
-    <section className="relative py-20 bg-linear-to-r from-blue-700 to-blue-500 overflow-hidden">
-      <div className="absolute top-0 left-0 w-64 h-64 bg-white/30 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
-      <div className="container">
-        <h1 className="section__header text-center mb-12">Our Acheivments</h1>
+    <section className="section relative overflow-hidden  py-20">
+      
+      <div className="container relative z-10">
+        <p className="mb-3 text-center text-[0.72rem] font-semibold uppercase tracking-[0.28em] text-sky-400">
+          By the numbers
+        </p>
+        <h1 className="section__header text-center mb-12 text-slate-50">
+          Our Achievements
+        </h1>
         <div className="grid gap-5 mt-10 grid-cols-[repeat(auto-fit,minmax(200px,1fr))]">
           <CounterBox
             icon="/images/icons/members.png"

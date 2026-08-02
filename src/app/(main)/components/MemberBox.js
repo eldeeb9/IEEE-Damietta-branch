@@ -11,6 +11,10 @@ const MemberBox = ({
   memberDetails,
   customeImageClass = "",
 }) => {
+
+  let imagePos;
+  if (name == "Youssef Abdelazeem") imagePos = "object-top";
+
   return (
     <>
       <motion.div
@@ -31,7 +35,7 @@ const MemberBox = ({
           <Image
             src={`/images/branch-members/${photo}`}
             alt={name}
-            className={`rounded-full object-cover w-full h-full ${customeImageClass} size-36!`}
+            className={`rounded-full object-cover ${imagePos} w-full h-full ${customeImageClass} size-36!`}
             width={250}
             height={250}
           />
