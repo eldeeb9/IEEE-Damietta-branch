@@ -50,7 +50,7 @@ const page = () => {
           <div className="grid gap-8 xl:grid-cols-[1.4fr_0.9fr]">
             <div className="space-y-8">
               <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
-                <h2 className="mb-6 text-2xl font-bold text-white">Head</h2>
+                <h2 className="mb-6 text-2xl font-bold text-white">Instructor</h2>
                 <div className="grid gap-6 lg:grid-cols-2">
                   <div className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-6 shadow-lg">
                     <div className="flex flex-col items-center gap-5 text-center">
@@ -67,7 +67,7 @@ const page = () => {
                           {trackTeam.instructor.name}
                         </p>
                         <p className="text-sm text-slate-400">
-                          {trackTeam.instructor.title}
+                          Instructor
                         </p>
                       </div>
                     </div>

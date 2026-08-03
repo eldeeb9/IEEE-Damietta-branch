@@ -9,12 +9,12 @@ const trackName = "Embedded System";
 const trackTeam = {
   viceHead: {
     name: "Eng. Omar Salama",
-    title: "Vice Head | Instructor",
+    title: "Vice Head",
     photo: "/images/branch-members/salama.jpg",
   },
   instructor: {
     name: "Eng. Yahia Hagag",
-    title: "Head | Instructor",
+    title: "Head",
     photo: "/images/branch-members/yahia.jpg",
   },
   technicalSupport: [
@@ -69,7 +69,7 @@ const page = () => {
             <div className="space-y-8">
               <div className="rounded-[2rem] border border-white/10 bg-slate-900/80 p-8 shadow-2xl shadow-slate-950/40 backdrop-blur-xl">
                 <h2 className="mb-6 text-2xl font-bold text-white">
-                  Vice Head
+                   Heads
                 </h2>
                 <div className="grid gap-6 lg:grid-cols-2">
                   <div className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-6 shadow-lg">

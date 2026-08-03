@@ -18,6 +18,8 @@ import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
 
 function LeadershipCard({ person, borderClass }) {
+  let imagePos;
+  if (person.name == "Belal El Bably") imagePos = "object-top";
   return (
     <div className="rounded-[1.75rem] border border-white/10 bg-slate-800/80 p-6 shadow-lg">
       <div className="flex flex-col items-center gap-5 text-center">
@@ -29,7 +31,7 @@ function LeadershipCard({ person, borderClass }) {
               src={person.photo}
               alt={person.name}
               fill
-              className="object-cover"
+              className={`object-cover ${imagePos}`}
             />
           ) : (
             <User className="h-16 w-16 text-slate-500" strokeWidth={1.5} />

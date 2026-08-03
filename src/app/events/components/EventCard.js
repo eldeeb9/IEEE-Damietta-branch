@@ -37,9 +37,9 @@ const EventCard = ({
               height={16}
               alt="vision"
             />
-            <span>
+            <span className="flex items-center gap-1">
               {formattedDate}
-              <span className="text-blue-600">{formattedTime}</span>
+              <span className="text-blue-600 text-xs">{formattedTime}</span>
             </span>
           </div>
           <div className="flex items-center gap-2 flex-1 pl-2">

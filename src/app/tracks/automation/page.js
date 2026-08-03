@@ -14,7 +14,7 @@ const trackTeam = {
   },
   instructor: {
     name: "Eng. Abd Al-Rhman Beghida",
-    title: "Vice Head",
+    title: "Head",
     photo: "/images/branch-members/PHOTO-2026-07-25-17-08-25.jpg",
   },
   technicalSupport: [
