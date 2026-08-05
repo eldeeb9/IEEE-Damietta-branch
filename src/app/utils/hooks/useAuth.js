@@ -11,6 +11,13 @@ export function useAuth() {
     return user;
   };
 
+  const getProfileData = async (id) => {
+    const supabase = await createServer();
+    const {data} = await supabase.from("profiles").select("*").eq("id", id).single();
+
+    return data;
+  };
+
   const checkAuth = async () => {
     const user = await getUserData();
 
@@ -19,5 +26,5 @@ export function useAuth() {
     return user;
   };
 
-  return { getUserData ,checkAuth };
+  return { getUserData, checkAuth, getProfileData };
 }

@@ -20,16 +20,27 @@ export const metadata = {
 };
 
 const page = async () => {
-  const {getUserData} = useAuth();
+  const { getUserData, getProfileData } = useAuth();
 
   const user = await getUserData();
+  const profile = await getProfileData(user.id);
 
+  let profileImage;
+
+  if (!profile.profile) {
+    profileImage = "/images/anonymous-profile.jpg";
+  } else {
+    profileImage = profile.profile;
+  }
 
   return (
     <>
       <Nav />
       <div className="container py-12!">
-        <UserDetails username={user.user_metadata.username} />
+        <UserDetails
+          username={user.user_metadata.username}
+          profile={profileImage}
+        />
         <PersonalInfo
           username={user.user_metadata.username}
           email={user.email}

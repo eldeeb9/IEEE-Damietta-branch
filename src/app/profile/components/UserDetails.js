@@ -4,10 +4,11 @@ import { SquarePen, X } from "lucide-react";
 import ImageCropper from "./ImageCropper";
 import { supabase } from "../../utils/supabase/client";
 import { getCroppedImg } from "@/app/utils/helpers/cropImage";
+import { useRouter } from "next/navigation";
 
-const UserDetails = ({ username }) => {
+
+const UserDetails = ({ username, profile}) => {
   const inputRef = useRef(null);
-  const [preview, setPreview] = useState(null);
   const [openModal, setOpenModal] = useState(false);
   const [image, setImage] = useState(null);
   const [crop, setCrop] = useState({ x: 0, y: 0 });
@@ -16,7 +17,7 @@ const UserDetails = ({ username }) => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [userId, setUserId] = useState(null);
-
+const router = useRouter();
   useEffect(() => {
     const fetchProfile = async () => {
       const {
@@ -26,16 +27,6 @@ const UserDetails = ({ username }) => {
 
       if (authError || !user) return;
       setUserId(user.id);
-
-      const { data, error: profileError } = await supabase
-        .from("profiles")
-        .select("profile")
-        .eq("id", user.id)
-        .single();
-
-      if (!profileError && data?.profile) {
-        setPreview(data.profile);
-      }
     };
 
     fetchProfile();
@@ -110,7 +101,6 @@ const UserDetails = ({ username }) => {
 
       if (updateError) throw updateError;
 
-      setPreview(profileUrl);
       setOpenModal(false);
       setImage(null);
       setCrop({ x: 0, y: 0 });
@@ -121,6 +111,7 @@ const UserDetails = ({ username }) => {
       console.error(err);
     } finally {
       setLoading(false);
+      router.refresh();
     }
   };
 
@@ -137,7 +128,7 @@ const UserDetails = ({ username }) => {
     <div className="flex flex-col items-center text-center">
       <div className="relative cursor-pointer" onClick={handleProfile}>
         <img
-          src={preview ?? "/images/anonymous-profile.jpg"}
+          src={profile}
           alt="profile"
           className="rounded-full size-24 object-cover"
         />

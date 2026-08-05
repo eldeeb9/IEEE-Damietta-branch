@@ -1,15 +1,23 @@
 import Image from "next/image";
 import NavLink from "./NavLink";
 import Link from "next/link";
-import MobileAside from "./MobileAside";
 import { useAuth } from "../utils/hooks/useAuth";
 import MobileNavButton from "./MobileNavButton";
 import { DropdownMenuDemo } from "./NavDropDownMenu";
 
 const Nav = async () => {
-  const { getUserData } = useAuth();
+  const { getUserData, getProfileData } = useAuth();
 
   const user = await getUserData();
+  const profile = await getProfileData(user.id);
+
+  let profileImage;
+
+  if (!profile.profile) {
+    profileImage = "/images/anonymous-profile.jpg";
+  } else {
+    profileImage = profile.profile;
+  }
 
   return (
     <nav className="mx-4 md:mx-32 px-6 bg-slate-700/20 backdrop-blur-lg border-b border-[#ffffff1a] shadow sticky top-3 rounded-full z-100">
@@ -43,7 +51,7 @@ const Nav = async () => {
             <>
               <Link href="/profile" className="flex items-center gap-4">
                 <img
-                  src={user.profile ?? "/images/anonymous-profile.jpg"}
+                  src={profileImage}
                   className="rounded-full"
                   alt="profile"
                   width={50}
