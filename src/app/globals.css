@@ -551,3 +551,7 @@ body {
     transform: translateY(10px);
   }
 }
+
+.swiper {
+  overflow: visible !important;
+}
