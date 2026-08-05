@@ -137,7 +137,7 @@ const UserDetails = ({ username }) => {
     <div className="flex flex-col items-center text-center">
       <div className="relative cursor-pointer" onClick={handleProfile}>
         <img
-          src={preview ?? preview?.profile}
+          src={preview ?? "/images/anonymous-profile.jpg"}
           alt="profile"
           className="rounded-full size-24 object-cover"
         />
@@ -174,7 +174,9 @@ const UserDetails = ({ username }) => {
 
               {!image ? (
                 <div className="flex flex-col items-center justify-center rounded-3xl border border-dashed border-white/10 bg-slate-950/60 px-6 py-10 text-center">
-                  <p className="mb-3 text-gray-300">Max image upload size is 1MB</p>
+                  <p className="mb-3 text-gray-300">
+                    Max image upload size is 1MB
+                  </p>
                   <button
                     type="button"
                     className="rounded-full bg-ieee-primary px-5 py-2 text-sm font-semibold text-white hover:bg-ieee-primary/90"

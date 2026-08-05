@@ -43,7 +43,7 @@ const Nav = async () => {
             <>
               <Link href="/profile" className="flex items-center gap-4">
                 <img
-                  src="/images/anonymous-profile.jpg"
+                  src={user.profile ?? "/images/anonymous-profile.jpg"}
                   className="rounded-full"
                   alt="profile"
                   width={50}
