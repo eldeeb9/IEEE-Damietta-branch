@@ -23,6 +23,14 @@ export const trackHubs = {
         photo: "/images/branch-members/youssef-ahmed.jpeg",
       },
     },
+    gallery: [
+      "/images/ras/1.png",
+      "/images/ras/3.png",
+      "/images/ras/4.png",
+      "/images/ras/5.png",
+      "/images/ras/7.png",
+      "/images/ras/8.png",
+    ],
     workshops: [
       {
         slug: "micro",
@@ -90,6 +98,14 @@ export const trackHubs = {
         photo: "/images/branch-members/elfar.jpeg",
       },
     },
+    gallery: [
+      "/images/pes/3.png",
+      "/images/pes/6.png",
+      "/images/pes/7.png",
+      "/images/pes/8.png",
+      "/images/pes/10.png",
+      "/images/pes/13.png",
+    ],
     workshops: [
       {
         slug: "solid",

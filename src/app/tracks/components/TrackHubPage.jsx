@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import Nav from "../../components/Nav";
 import Footer from "../../components/Footer";
+import TrackGallerySlider from "./TrackGallerySlider";
 
 function LeadershipCard({ person, borderClass }) {
   let imagePos;
@@ -120,6 +121,10 @@ export default function TrackHubPage({ hub }) {
               </div>
             </div>
           </div>
+
+          {hub.gallery?.length ? (
+            <TrackGallerySlider images={hub.gallery} />
+          ) : null}
 
           <div>
             <h2 className="mb-8 text-center text-2xl font-bold text-white sm:text-3xl">

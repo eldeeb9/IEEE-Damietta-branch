@@ -25,7 +25,7 @@ const Members = () => {
           <div className="grid w-full gap-6 sm:grid-cols-2">
             <div className="relative overflow-hidden rounded-[32px] border bg-slate-800 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.45)]">
               <div className="flex flex-col items-center gap-6 text-center sm:text-left sm:flex-row sm:items-center">
-                <div className="relative h-40 w-40 rounded-full border-4 border-[#d4af37] bg-slate-950 overflow-hidden shrink-0">
+                <div className="slide-animation relative h-40 w-40 rounded-full border-4 border-[#d4af37] bg-slate-950 overflow-hidden shrink-0">
                   <Image
                     src="/images/branch-members/PHOTO-2026-07-10-20-14-41.jpg"
                     alt="Dr. Marwa Fayez"
@@ -57,7 +57,7 @@ const Members = () => {
 
             <div className="relative overflow-hidden rounded-[32px] border bg-slate-800 p-6 shadow-[0_18px_60px_rgba(15,23,42,0.35)]">
               <div className="flex flex-col items-center gap-6 text-center sm:text-left sm:flex-row sm:items-center">
-                <div className="relative h-40 w-40 rounded-full border-4 border-slate-500 bg-slate-950 overflow-hidden shrink-0">
+                <div className="slide-animation relative h-40 w-40 rounded-full border-4 border-slate-500 bg-slate-950 overflow-hidden shrink-0">
                   <Image
                     src="/images/branch-members/PHOTO-2026-07-30-21-41-43.jpg"
                     alt="Dr. Hadeer Helaly"
@@ -171,7 +171,7 @@ const Members = () => {
           <MemberBox
             name="Youssef Abdelazeem"
             role="Treasurer"
-            photo="photo_2026-03-15_15-13-38.jpg"
+            photo="PHOTO-2026-08-03-00-16-14.jpg"
             delay={0.6}
             modal={openModalFor === "Youssef Abdelazeem"}
             modalOnOpen={() => setOpenModalFor("Youssef Abdelazeem")}

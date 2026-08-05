@@ -539,3 +539,15 @@ body {
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
 }
+
+.slide-animation {
+  animation: slidess 2s ease-in-out infinite alternate;}
+
+@keyframes slidess {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(10px);
+  }
+}
