@@ -48,7 +48,7 @@ function LeadershipCard({ person, borderClass }) {
 }
 
 export default function TrackHubPage({ hub }) {
-  const { accent, leadership, workshops } = hub;
+  const { name, accent, leadership, workshops } = hub;
 
   const workshopIcons = {
     micro: Cpu,
@@ -123,7 +123,7 @@ export default function TrackHubPage({ hub }) {
           </div>
 
           {hub.gallery?.length ? (
-            <TrackGallerySlider images={hub.gallery} />
+            <TrackGallerySlider images={hub.gallery} track={name} />
           ) : null}
 
           <div>
@@ -151,8 +151,12 @@ export default function TrackHubPage({ hub }) {
                           <Icon className="h-20 w-20" />
                         </div>
                       </div>
-                      <h3 className="text-lg font-semibold text-white">{workshop.name}</h3>
-                      <p className="text-sm leading-relaxed text-slate-400">{workshop.description}</p>
+                      <h3 className="text-lg font-semibold text-white">
+                        {workshop.name}
+                      </h3>
+                      <p className="text-sm leading-relaxed text-slate-400">
+                        {workshop.description}
+                      </p>
                     </div>
                   </Link>
                 );

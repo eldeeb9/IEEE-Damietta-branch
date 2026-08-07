@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTimes } from "react-icons/fa";
+import { Mail } from "lucide-react";
 
 const MemberBox = ({
   name,
@@ -26,7 +27,8 @@ const MemberBox = ({
         //   delay: delay,
         // }}
         // viewport={{ once: true, amount: 0.2 }}
-        className="relative text-center flex-1 min-w-62.5 max-w-75 p-6 rounded-2xl bg-gradient-to-tl from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-950 hover:scale-105 shadow text-white overflow-hidden transition-all duration-300"      >
+        className="relative text-center flex-1 min-w-62.5 max-w-75 p-6 rounded-2xl bg-gradient-to-tl from-slate-700 to-slate-800 hover:from-slate-800 hover:to-slate-950 hover:scale-105 shadow text-white overflow-hidden transition-all duration-300"
+      >
         <p className="absolute top-0 left-0 bg-gray-200 text-ieee-primary py-2 px-4 rounded-br-3xl">
           {role}
         </p>
@@ -51,10 +53,10 @@ const MemberBox = ({
             <FaFacebook className="text-[#1877F2] " />
           </a>
           <a
-            href={memberDetails.instagram}
+            href={`mailto:${memberDetails.email}`}
             className="bg-gray-200 p-2 text-2xl rounded-full"
           >
-            <FaInstagram className="text-[#DD2A7B]" />
+            <Mail className="text-red-500" />
           </a>
           <a
             href={memberDetails.linkedin}

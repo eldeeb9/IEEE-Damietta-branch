@@ -6,6 +6,7 @@ import Vision from "./components/Vision";
 import Partners from "./components/Partners";
 import Achievments from "./components/Achievments";
 import Questions from "./components/Questions";
+import Chatbot from "./components/Chatbot";
 
 export const metadata = {
   title: "IEEE Damietta Student Branch",
@@ -70,6 +71,7 @@ const Hello = () => {
       <Partners />
       <Questions />
       <Footer />
+      <Chatbot />
     </>
   );
 };

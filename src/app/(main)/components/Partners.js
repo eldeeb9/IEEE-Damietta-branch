@@ -32,6 +32,13 @@ const partners = [
     link: "https://www.facebook.com/ArcadiaSpace1/",
     color: "#92400e",
   },
+  {
+    src: "/images/partners/smart-track.jpg",
+    alt: "Smart Track",
+    name: "Smart Track",
+    link: "https://www.facebook.com/profile.php?id=61559480211474",
+    color: "#0062ffff",
+  },
 ];
 
 

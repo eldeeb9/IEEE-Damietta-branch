@@ -102,8 +102,7 @@ const Members = () => {
               name: "Adham Elnfarawy",
               role: "Chairman",
               facebook: "https://www.facebook.com/share/1BEdUTg7Pc/",
-              instagram:
-                "https://www.instagram.com/adham_rezk33?igsh=bTdxZmt2djNtNDg2",
+              email: "adhamelnafarawy260@gmail.com",
               linkedin:
                 "https://www.linkedin.com/in/adham-elnafarawy?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             }}
@@ -122,8 +121,7 @@ const Members = () => {
               role: "Vice Chair",
               facebook:
                 "https://www.facebook.com/share/1DLzURQ9sK/?mibextid=wwXIfr",
-              instagram:
-                "https://www.instagram.com/rovanayman_?igsh=aDd0enhsYnBrbzJt&utm_source=qr",
+              email: "Rovanrashad116@gmail.com",
               linkedin:
                 "https://www.linkedin.com/in/rovan-rashad-196b7231a?utm_source=share_via&utm_content=profile&utm_medium=member_ios",
             }}
@@ -142,8 +140,7 @@ const Members = () => {
               role: "Vice Chair Non-technical",
               facebook:
                 "https://www.facebook.com/share/1DT891zDJp/?mibextid=wwXIfr",
-              instagram:
-                "https://www.instagram.com/me_du_sa.11?igsh=OG55eHgxM2Ixdnc0&utm_source=qr",
+              email: "basmalaelkhawaga377@gmail.com",
               linkedin:
                 "https://www.linkedin.com/in/basmala-khalid-76b2a9335?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
             }}
@@ -161,8 +158,7 @@ const Members = () => {
               name: "Omar Zaky",
               role: "Secretary",
               facebook: "https://www.facebook.com/omar.zaky.8039",
-              instagram:
-                "https://www.instagram.com/omar___zaky?igsh=MTQzZnc3dHJjM2JtMw==",
+              email: "omarieee956@gmail.com",
               linkedin:
                 "https://www.linkedin.com/in/omar-zaky-072674221?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app",
             }}
@@ -180,7 +176,7 @@ const Members = () => {
               name: "Youssef Abdelazeem",
               role: "Treasurer",
               facebook: "https://www.facebook.com/YoussefAbdelaziiim",
-              instagram: "https://www.instagram.com/youssef._.abdelazim",
+              email: "Youssef.abdelazim100@gmail.com",
               linkedin: "https://linkedin.com/in/youssef-mohamed10",
             }}
           />
@@ -198,8 +194,7 @@ const Members = () => {
               role: "Treasurer",
               facebook:
                 "https://www.facebook.com/profile.php?id=100025767703104",
-              instagram:
-                "https://www.instagram.com/nada_ahmed1412?igsh=YzljYTk1ODg3Zg==",
+              email: "nadaahmedmohamed8@gmail.com",
               linkedin:
                 "https://www.linkedin.com/in/nada-elhoseny-8741a634b?utm_source=share_via&utm_content=profile&utm_medium=member_android",
             }}
@@ -218,8 +213,8 @@ const Members = () => {
               role: "Webmaster",
               facebook:
                 "https://www.facebook.com/share/1bxSnFahJS/?mibextid=wwXIfr",
-              instagram:
-                "https://www.instagram.com/eldeeb_9?igsh=dWxlYWNnM3hzdHU2&utm_source=qr",
+              email:
+                "https://www.email.com/eldeeb_9?igsh=dWxlYWNnM3hzdHU2&utm_source=qr",
               linkedin: "https://www.linkedin.com/in/ahmed-eldeeb-696983370",
             }}
           />
@@ -235,7 +230,7 @@ const Members = () => {
               name: "Ahmed Safwat",
               role: "Webmaster",
               facebook: "https://www.facebook.com/share/1DAPgXpjHL/",
-              instagram: "https://www.instagram.com/insafwat/",
+              email: "https://www.email.com/insafwat/",
               linkedin: "https://www.linkedin.com/in/safwat96/",
             }}
             customeImageClass="object-top"
@@ -252,8 +247,8 @@ const Members = () => {
               name: "Mariam Farahat",
               role: "UI/UX Designer",
               facebook: "https://www.facebook.com/share/1c4tm8ZTgK/",
-              instagram:
-                "https://www.instagram.com/mariam.farahat.756?igsh=NTZvYjUwZ2J1aTRj",
+              email:
+                "https://www.email.com/mariam.farahat.756?igsh=NTZvYjUwZ2J1aTRj",
               linkedin: "https://www.linkedin.com/in/mariam-farahat/",
             }}
             customeImageClass="object-top"
