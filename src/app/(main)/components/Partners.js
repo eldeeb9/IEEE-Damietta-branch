@@ -39,6 +39,27 @@ const partners = [
     link: "https://www.facebook.com/profile.php?id=61559480211474",
     color: "#0062ffff",
   },
+  {
+    src: "/images/partners/hexa-angle.jpg",
+    alt: "Hexa Angle",
+    name: "Hexa Angle",
+    link: "https://web.facebook.com/HexaAngle",
+    color: "#b91c1c",
+  },
+  {
+    src: "/images/partners/ieee-met.png",
+    alt: "IEEE MET",
+    name: "IEEE MET",
+    link: "https://ieeemet.org/",
+    color: "#0284c7",
+  },
+  {
+    src: "/images/partners/mega.jpg",
+    alt: "MEGA",
+    name: "MEGA",
+    link: "https://megateam.vercel.app/",
+    color: "#ef4444",
+  },
 ];
 
 
