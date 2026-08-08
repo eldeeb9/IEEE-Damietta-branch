@@ -9,11 +9,11 @@ const Nav = async () => {
   const { getUserData, getProfileData } = useAuth();
 
   const user = await getUserData();
-  const profile = await getProfileData(user.id);
+  const profile = await getProfileData(user?.id);
 
   let profileImage;
 
-  if (!profile.profile) {
+  if (!profile?.profile) {
     profileImage = "/images/anonymous-profile.jpg";
   } else {
     profileImage = profile.profile;
