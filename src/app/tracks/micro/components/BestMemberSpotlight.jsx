@@ -8,50 +8,73 @@ import CelebrationParticles from "../../../components/CelebrationParticles";
 
 const traits = ["Commitment", "Teamwork", "Creativity"];
 
-const useInViewCount = (ref, threshold = 0.4) => {
-  const [enterCount, setEnterCount] = useState(0);
-  const wasInViewRef = useRef(false);
+const BestMemberSpotlight = ({ member }) => {
+  const cardRef = useRef(null);
+  const isInView = useInView(cardRef, { amount: 0.4 });
 
+  const [showParticles, setShowParticles] = useState(false);
+  const userHasScrolledRef = useRef(false);
+  const isIntersectingRef = useRef(false);
+
+  // بنسمع على الـ events بتاعة اليوزر (عجلة الماوس، التاتش، الكيبورد، والضغط بالماوس)
+  // عشان نضمن إن اليوزر هو اللي بيعمل سكرول بنفسه مش Next.js اللي بيعمل scroll تلقائي
   useEffect(() => {
-    const el = ref.current;
+    const onUserInteraction = () => {
+      userHasScrolledRef.current = true;
+      window.removeEventListener("wheel", onUserInteraction);
+      window.removeEventListener("touchmove", onUserInteraction);
+      window.removeEventListener("keydown", onUserInteraction);
+      window.removeEventListener("pointerdown", onUserInteraction);
+    };
+
+    window.addEventListener("wheel", onUserInteraction, { passive: true });
+    window.addEventListener("touchmove", onUserInteraction, { passive: true });
+    window.addEventListener("keydown", onUserInteraction, { passive: true });
+    window.addEventListener("pointerdown", onUserInteraction, { passive: true });
+
+    return () => {
+      window.removeEventListener("wheel", onUserInteraction);
+      window.removeEventListener("touchmove", onUserInteraction);
+      window.removeEventListener("keydown", onUserInteraction);
+      window.removeEventListener("pointerdown", onUserInteraction);
+    };
+  }, []);
+
+  // بنراقب السيكشن — لو اليوزر سكرول بنفسه ودخل السيكشن في الـ viewport نفعّل الـ particles
+  useEffect(() => {
+    const el = cardRef.current;
     if (!el) return;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
         const isIntersecting = entry.isIntersecting;
+        isIntersectingRef.current = isIntersecting;
 
-        // نزود العداد بس لما يحصل انتقال من "مش ظاهر" لـ"ظاهر"
-        if (isIntersecting && !wasInViewRef.current) {
-          setEnterCount((prev) => prev + 1);
+        if (isIntersecting && userHasScrolledRef.current) {
+          setShowParticles(true);
         }
-
-        wasInViewRef.current = isIntersecting;
       },
-      { threshold }
+      { threshold: 0.4 }
     );
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [ref, threshold]);
+  }, []);
 
-  return enterCount;
-};
-
-const BestMemberSpotlight = ({ member }) => {
-  const cardRef = useRef(null);
-  const isInView = useInView(cardRef, { amount: 0.4 });
-
-  const enterCount = useInViewCount(cardRef, 0.4);
-
-  
-
-  // الأنيميشن يظهر بس لما يكون ده ثاني دخول بالظبط
-  const active = enterCount === 2;
-
+  // بنستنى نص ثانية بعد ما الصفحة تفتح (عشان نتأكد إن Next.js خلص السكرول التلقائي بتاعه)
+  // لو السيكشن لسه ظاهر (زي في حالة الديسكتوب لو الشاشة كبيرة)، بنشغل الـ particles
+  useEffect(() => {
+    const timerId = setTimeout(() => {
+      if (isIntersectingRef.current) {
+        setShowParticles(true);
+      }
+    }, 600);
+    return () => clearTimeout(timerId);
+  }, []);
 
   return (
     <>
-      <CelebrationParticles active={active} />
+      <CelebrationParticles active={showParticles} />
 
       <motion.div
         ref={cardRef}
