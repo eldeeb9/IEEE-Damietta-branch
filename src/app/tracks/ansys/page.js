@@ -26,10 +26,10 @@ const trackTeam = {
     },
   ],
   bestMember: {
-    name: "Ahmed Safwat",
+    name: "Hamdi Ibrahem",
     title: "Best Member",
     description: `The standout member of the ${trackName} track this season, excelling in execution, collaboration, and creativity.`,
-    photo: "/images/branch-members/PHOTO-2026-06-24-20-40-03.jpg",
+    photo: "/images/anonymous-profile.jpg",
   },
 };
 

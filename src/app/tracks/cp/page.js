@@ -13,10 +13,10 @@ const trackTeam = {
     photo: "/images/branch-members/belal.jpg",
   },
   bestMember: {
-    name: "Ahmed Safwat",
+    name: "Nada Gamal Elhenawy Rezk",
     title: "Best Member",
     description: `The standout member of the ${trackName} track this season, excelling in execution, collaboration, and creativity.`,
-    photo: "/images/branch-members/PHOTO-2026-06-24-20-40-03.jpg",
+    photo: "/images/branch-members/nada-gamal.jpeg",
   },
 };
 

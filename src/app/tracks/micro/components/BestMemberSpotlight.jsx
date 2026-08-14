@@ -72,6 +72,10 @@ const BestMemberSpotlight = ({ member }) => {
     return () => clearTimeout(timerId);
   }, []);
 
+  let imagePos = "object-top";
+
+  if (member.name == "Omar Reda Mohammed Elsaeed") imagePos = "object-center";
+
   return (
     <>
       <CelebrationParticles active={showParticles} />
@@ -136,10 +140,10 @@ const BestMemberSpotlight = ({ member }) => {
             <div className="relative h-full w-full overflow-hidden rounded-full border-4 border-amber-300/50 bg-slate-900 shadow-[0_0_40px_rgba(251,191,36,0.35)] ring-4 ring-amber-400/20">
               <Image
                 // src={member.photo}
-                src="/"
+                src={member.photo}
                 alt={member.name}
                 fill
-                className="object-cover object-top"
+                className={`object-cover ${imagePos}`}
                 priority
               />
               <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.18),transparent_45%)]" />
