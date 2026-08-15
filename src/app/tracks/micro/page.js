@@ -35,7 +35,7 @@ const trackTeam = {
       photo: "/images/branch-members/PHOTO-2026-07-24-16-40-00.jpg",
     },
     {
-      name: "Dalia",
+      name: "Dalia Elagawy",
       title: "Technical Support",
       photo: "/images/branch-members/PHOTO-2026-07-24-17-58-27.jpg",
     },
